@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreen.SplashScreenActivity"></activity>
+        <activity android:name=".RankingActivity"></activity>
+        <activity android:name=".Menu.JoinRoomActivity" />
+        <activity android:name=".Menu.CreateRoomActivity" />
+        <activity android:name=".Menu.MenuActivity" />
+        <activity android:name=".SplashScreen.SplashScreenActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
