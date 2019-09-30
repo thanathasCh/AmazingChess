@@ -4,4 +4,15 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
+    <color name="main_background">#20232A</color>
+    <color name="sub_background">#2B2D3A</color>
+    <color name="button_background">#EC3565</color>
+    <color name="sub_button_background">#F19E0F</color>
+    <color name="text_color">#F3CCD6</color>
+    <color name="sub_text_color">#C9C7C7</color>
+    <color name="chess_board">#B8D7EC</color>
+    <color name="sub_chess_board">#DDA282</color>
+
+    <color name="alpha">#00FFFFFF</color>
+
 </resources>
