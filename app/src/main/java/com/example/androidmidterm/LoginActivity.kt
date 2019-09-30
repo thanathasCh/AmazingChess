@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
-            override fun onDataChange(p0: DataSnapshot) {
+            override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists() && snapshot.children.iterator().next().child("Password").value.toString() == password) {
                     //TODO if userName and password are corrent.
                 } else {
