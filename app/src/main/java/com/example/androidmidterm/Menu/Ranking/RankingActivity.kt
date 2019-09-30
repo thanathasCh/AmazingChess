@@ -1,4 +1,4 @@
-package com.example.androidmidterm
+package com.example.androidmidterm.Menu.Ranking
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

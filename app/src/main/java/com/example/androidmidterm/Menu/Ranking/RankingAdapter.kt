@@ -1,4 +1,4 @@
-package com.example.androidmidterm.Menu
+package com.example.androidmidterm.Menu.Ranking
 
 import android.app.Activity
 import android.content.Context

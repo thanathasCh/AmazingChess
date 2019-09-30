@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Register.RegisterActivity"></activity>
-        <activity android:name=".RankingActivity" />
+        <activity android:name=".Menu.Ranking.RankingActivity" />
         <activity android:name=".Menu.JoinRoomActivity" />
         <activity android:name=".Menu.CreateRoomActivity" />
         <activity android:name=".Menu.MenuActivity" />
