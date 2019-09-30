@@ -21,6 +21,11 @@ class LoginActivity : AppCompatActivity() {
         tvLogin.setOnClickListener {
             loginAuthentication(tvUserName.text.toString(), tvPassword.hashCode().toString())
         }
+
+        tvRegister.setOnClickListener {
+            var intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun loginAuthentication(userName: String, password: String) {
