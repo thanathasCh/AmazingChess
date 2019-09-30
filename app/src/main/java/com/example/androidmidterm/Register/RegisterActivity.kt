@@ -1,10 +1,11 @@
-package com.example.androidmidterm
+package com.example.androidmidterm.Register
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import com.example.androidmidterm.Menu.MenuActivity
+import com.example.androidmidterm.R
 import kotlinx.android.synthetic.main.activity_register.*
 
 class RegisterActivity : AppCompatActivity() {

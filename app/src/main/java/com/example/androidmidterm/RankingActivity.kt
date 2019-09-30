@@ -1,4 +1,4 @@
-package com.example.androidmidterm.Register
+package com.example.androidmidterm
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -6,7 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import com.example.androidmidterm.Menu.MenuActivity
 import com.example.androidmidterm.R
-import com.example.androidmidterm.RegisterActivity
+import com.example.androidmidterm.Register.RegisterActivity
 import com.example.androidmidterm.Services.DbContext
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
