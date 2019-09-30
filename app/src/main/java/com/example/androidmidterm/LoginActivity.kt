@@ -1,11 +1,15 @@
 package com.example.androidmidterm
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
+import com.example.androidmidterm.Menu.MenuActivity
 import com.example.androidmidterm.Services.DbContext
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
 
@@ -14,6 +18,9 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+        tvLogin.setOnClickListener {
+            loginAuthentication(tvUserName.text.toString(), tvPassword.hashCode().toString())
+        }
     }
 
     fun loginAuthentication(userName: String, password: String) {
@@ -25,9 +32,22 @@ class LoginActivity : AppCompatActivity() {
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists() && snapshot.children.iterator().next().child("Password").value.toString() == password) {
-                    //TODO if userName and password are corrent.
+                    tvLogin.setOnClickListener {
+                        var intent = Intent(applicationContext, MenuActivity::class.java)
+                        startActivity(intent)
+                    }
                 } else {
-                    //TODO userName or password is not correct.
+                    tvLogin.setOnClickListener {
+                        val mAlertDialog = AlertDialog.Builder(this@LoginActivity)
+                        mAlertDialog.setTitle("Account not found!")
+                        mAlertDialog.setMessage("Invalid Username or Password")
+                        mAlertDialog.setIcon(R.drawable.p_momo)
+
+                        mAlertDialog.setNegativeButton("OK") {dialog, id ->
+                            dialog.dismiss()
+                        }
+                        mAlertDialog.show()
+                    }
                 }
             }
 

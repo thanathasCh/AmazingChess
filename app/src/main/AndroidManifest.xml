@@ -16,11 +16,13 @@
         <activity android:name=".Menu.CreateRoomActivity" />
         <activity android:name=".Menu.MenuActivity" />
         <activity android:name=".SplashScreen.SplashScreenActivity" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".LoginActivity">
 
+        <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
     </application>
