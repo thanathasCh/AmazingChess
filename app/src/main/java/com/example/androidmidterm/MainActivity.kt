@@ -1,8 +1,11 @@
 package com.example.androidmidterm
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androidmidterm.Providers.User
+import com.example.androidmidterm.SplashScreen.SplashScreenActivity
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -10,8 +13,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val u = User()
-//        u.LogIn("test007", "0")
-        u.getValue()
+        text.setOnClickListener {
+            val intent = Intent(this, SplashScreenActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
