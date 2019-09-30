@@ -1,10 +1,12 @@
-package com.example.androidmidterm
+package com.example.androidmidterm.Login
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import com.example.androidmidterm.Menu.MenuActivity
+import com.example.androidmidterm.R
+import com.example.androidmidterm.RegisterActivity
 import com.example.androidmidterm.Services.DbContext
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

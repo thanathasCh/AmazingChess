@@ -1,7 +1,8 @@
-package com.example.androidmidterm
+package com.example.androidmidterm.Register
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.androidmidterm.R
 
 class RankingActivity : AppCompatActivity() {
 

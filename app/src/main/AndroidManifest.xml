@@ -12,13 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".RegisterActivity"></activity>
-        <activity android:name=".RankingActivity" />
+        <activity android:name=".Register.RankingActivity" />
         <activity android:name=".Menu.JoinRoomActivity" />
         <activity android:name=".Menu.CreateRoomActivity" />
         <activity android:name=".Menu.MenuActivity" />
         <activity android:name=".SplashScreen.SplashScreenActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".Login.LoginActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
 
