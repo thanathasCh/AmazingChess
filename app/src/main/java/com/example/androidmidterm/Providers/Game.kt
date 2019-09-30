@@ -1,12 +1,12 @@
 package com.example.androidmidterm.Providers
 
-class Game: IGame {
+class Game {
 
-    override fun createRoom(): Boolean {
+    fun createRoom(): Boolean {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun findRoom(roomId: Int): Boolean {
+    fun findRoom(roomId: Int): Boolean {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

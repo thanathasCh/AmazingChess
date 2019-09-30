@@ -1,27 +1,44 @@
 package com.example.androidmidterm.Services
 
+import com.google.firebase.database.Exclude
 import java.sql.Date
 
-data class User (
-    var Id: Int,
-    var Name: String,
-    var FirstName: String,
-    var LastName: String,
-    var ImageURL: String,
-    var CreatedAt: Date,
-    var EditedAt: Date
-)
+data class UserModel (
+    var Id: String = "",
+    var Name: String = "",
+    var FirstName: String = "",
+    var LastName: String = "",
+    var ImageURL: String = "",
+    var CreatedAt: String = "",
+    var EditedAt: String = ""
+) {
+    @Exclude
+    fun toMap():Map<String, Any?> {
+        return mapOf(
+            "Name" to Name,
+            "FirstName" to FirstName,
+            "LastName" to LastName,
+            "ImageURL" to ImageURL,
+            "CreatedAt" to CreatedAt,
+            "EditedAt" to EditedAt
+        )
+    }
+}
 
-data class GameRoom (
-    var Id: Int,
-    var Name: String,
-    var StatusByte: Int,
-    var Status: String = when(StatusByte) {
-        0 -> "Ended"
-        1 -> "Waiting"
-        2 -> "Playing"
-        else -> "Unknown"
-    },
-    var CreatedBy: Int,
-    var CreatedAt: Date
-)
+data class GameRoomModel (
+    var Id: String = "",
+    var Name: String = "",
+    var StatusByte: Int = 0,
+    var CreatedBy: Int = 0,
+    var CreatedAt: String = ""
+) {
+    @Exclude
+    fun toMap(): Map<String, Any?> {
+        return mapOf(
+            "Name" to Name,
+            "StatusByte" to StatusByte,
+            "CreatedBy" to CreatedBy,
+            "CreatedAt" to CreatedAt
+        )
+    }
+}
