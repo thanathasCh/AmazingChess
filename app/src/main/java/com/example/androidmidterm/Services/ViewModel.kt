@@ -4,7 +4,8 @@ data class UserViewModel (
     var Id: String,
     var Name: String,
     var FullName: String,
-    var ImageUrl: String
+    var ImageUrl: String,
+    var Score: Int
 )
 
 data class GameRoomViewModel (

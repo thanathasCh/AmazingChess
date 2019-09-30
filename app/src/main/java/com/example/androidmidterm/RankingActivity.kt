@@ -2,14 +2,18 @@ package com.example.androidmidterm
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.androidmidterm.Menu.RankingAdapter
+import com.example.androidmidterm.Services.UserViewModel
+import kotlinx.android.synthetic.main.activity_ranking.*
 
 class RankingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ranking)
-
-        //        rvRanking.adapter = RankingAdapter(this, userList)
-//        rvRanking.setItemClickListener{}
+        val a = ArrayList<UserViewModel>()
+        rvRanking.layoutManager = LinearLayoutManager(this)
+        rvRanking.adapter = RankingAdapter(this, a)
     }
 }

@@ -10,7 +10,8 @@ data class UserModel (
     var LastName: String = "",
     var ImageURL: String = "",
     var CreatedAt: String = "",
-    var EditedAt: String = ""
+    var EditedAt: String = "",
+    var Score: Int = 0
 ) {
     @Exclude
     fun toMap():Map<String, Any?> {
@@ -20,7 +21,8 @@ data class UserModel (
             "LastName" to LastName,
             "ImageURL" to ImageURL,
             "CreatedAt" to CreatedAt,
-            "EditedAt" to EditedAt
+            "EditedAt" to EditedAt,
+            "Score" to Score
         )
     }
 }
@@ -29,7 +31,7 @@ data class GameRoomModel (
     var Id: String = "",
     var Name: String = "",
     var StatusByte: Int = 0,
-    var CreatedBy: Int = 0,
+    var CreatedBy: String = "",
     var CreatedAt: String = ""
 ) {
     @Exclude

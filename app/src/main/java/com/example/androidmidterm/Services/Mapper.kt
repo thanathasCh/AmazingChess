@@ -5,7 +5,8 @@ class Mapper {
         Id = Id,
         Name = Name,
         FullName = "$FirstName $LastName",
-        ImageUrl = ImageURL
+        ImageUrl = ImageURL,
+        Score = Score
     )
 
     fun GameRoomModel.toGameRoomViewModel() = GameRoomViewModel (

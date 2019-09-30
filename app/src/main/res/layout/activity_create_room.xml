@@ -29,24 +29,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCreateTitle" />
 
-    <EditText
-        android:id="@+id/etPasswordRoom"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter Password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNameRoom" />
+<!--    <EditText-->
+<!--        android:id="@+id/etPasswordRoom"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:ems="10"-->
+<!--        android:hint="Enter Password"-->
+<!--        android:inputType="textPassword"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/etNameRoom" />-->
 
     <TextView
         android:id="@+id/tvCreateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
         android:text="Create"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPasswordRoom" />
+        app:layout_constraintTop_toBottomOf="@+id/etNameRoom" />
+    <!--        app:layout_constraintTop_toBottomOf="@+id/etPasswordRoom" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
