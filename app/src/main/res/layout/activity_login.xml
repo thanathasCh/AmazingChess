@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_background"
     tools:context=".Login.LoginActivity">
 
     <EditText
@@ -11,42 +12,88 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="220dp"
-        android:hint="Username"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:drawableLeft="@drawable/ic_action_user"
+        android:drawablePadding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/bg_edit_text"
+        android:textColor="@color/text_color"
+        android:hint="@string/username_title"/>
 
     <EditText
         android:id="@+id/tvPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="Password"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
         android:inputType="textPassword"
+        android:drawableLeft="@drawable/ic_action_lock"
+        android:drawablePadding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
+        app:layout_constraintTop_toBottomOf="@+id/tvUserName"
+        android:background="@drawable/bg_edit_text"
+        android:textColor="@color/text_color"
+        android:hint="@string/password_title"/>
 
-    <TextView
-        android:id="@+id/tvLogin"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="100dp"
-        android:text="Login"
-        android:textSize="36dp"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/button_background"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/tvRegister">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:gravity="center"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:id="@+id/tvLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/sign_in_button"
+                android:textColor="@color/text_color"
+                android:textSize="24dp" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/tvRegister"
-        android:layout_width="63dp"
-        android:layout_height="18dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="24dp"
-        android:text="Register"
-        app:layout_constraintBottom_toTopOf="@+id/tvLogin"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/sign_up_button"
+        android:textColor="@color/text_color"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/tvPassword"
         app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

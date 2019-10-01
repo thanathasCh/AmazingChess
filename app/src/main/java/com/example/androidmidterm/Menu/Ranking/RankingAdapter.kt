@@ -6,36 +6,43 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.androidmidterm.R
 import com.example.androidmidterm.Services.UserViewModel
 import kotlinx.android.synthetic.main.ranking_item.view.*
 
-class RankingAdapter(activity: Activity, user: Array<UserViewModel>) : BaseAdapter() {
-    private val activity = activity
-    private val user = user
+class RankingAdapter(private val activity: Activity, private val users: java.util.ArrayList<UserViewModel>):
+        RecyclerView.Adapter<RankingAdapter.RankingHolder>() {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RankingHolder {
+        val inflatedView = LayoutInflater.from(activity)
+            .inflate(R.layout.ranking_item, parent, false)
 
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        val user = user[position]
-        val inflater =
-            activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        val view = inflater.inflate(R.layout.activity_ranking, null)
-
-        view.tvName.text = user.Name
-        //view.ivUser.setImageResource(user.Id) //TODO For P'Oat
-        return view
-
-
+        return RankingHolder(inflatedView)
     }
 
-    override fun getItem(position: Int): Any {
-        return user[position]
+    override fun getItemCount() = users.size
+
+    override fun onBindViewHolder(holder: RankingHolder, position: Int) {
+        holder.bindUser(users[position], position + 1)
     }
 
-    override fun getItemId(position: Int): Long {
-        return position.toLong()
-    }
+    class RankingHolder(view: View):
+            RecyclerView.ViewHolder(view) {
+        private val view: View = view
+        private var user: UserViewModel? = null
 
-    override fun getCount(): Int {
-        return user.count()
+        fun bindUser(user: UserViewModel, position: Int) {
+            this.user = user
+            with (view) {
+                tvName.text = user.FullName
+                tvScore.text = user.Score.toString()
+                tvRank.text = position.toString()
+            }
+
+            Glide.with(view.context)
+                .load(user.ImageUrl)
+                .into(view.ivUser)
+        }
     }
 }

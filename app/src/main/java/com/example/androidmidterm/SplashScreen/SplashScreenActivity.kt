@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.example.androidmidterm.Login.LoginActivity
 import com.example.androidmidterm.MainActivity
 import com.example.androidmidterm.R
 
@@ -17,7 +18,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
         Handler().postDelayed({
             run {
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
                 finish()
             }

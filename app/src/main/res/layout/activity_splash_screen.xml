@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_background"
     tools:context=".SplashScreen.SplashScreenActivity">
 
     <ImageView
@@ -18,17 +19,30 @@
         app:srcCompat="@drawable/p_fair" />
 
     <TextView
-        android:id="@+id/tvSplahTitle"
+        android:id="@+id/tvSplashTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Chase by Oat and James"
-        android:textColor="@android:color/black"
+        android:layout_marginTop="32dp"
+        android:text="@string/splash_screen_sub_title"
+        android:textColor="@color/text_color"
         android:textSize="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imSplash"
-        app:layout_constraintVertical_bias="0.318" />
+        app:layout_constraintTop_toBottomOf="@+id/imSplash" />
+
+    <TextView
+        android:id="@+id/tvCredit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="174dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="178dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSplashTitle"
+        android:textSize="16dp"
+        android:textColor="@color/sub_text_color"
+        android:text="@string/credit"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

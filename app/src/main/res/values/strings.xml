@@ -4,7 +4,7 @@
 
 <!-- Titles -->
     <string name="login_title">LOG IN</string>
-    <string name="register_title">REGISTRATION</string>
+    <string name="register_title">CREATE ACCOUNT</string>
     <string name="menu_title">MENU</string>
     <string name="create_room_title">CREATE ROOM</string>
     <string name="join_room_title">JOIN ROOM</string>
@@ -25,13 +25,15 @@
 <!-- Sub-Title -->
     <string name="alert_message_sub_title">Username or Password is wrong, Try again :)</string>
     <string name="alert_messageV2_sub_title">Invalid Username or Password</string>
+    <string name="splash_screen_sub_title">AMAZING CHESS</string>
+    <string name="credit">By Oat and James</string>
 
 <!-- Error -->
     <string name="empty_error">Field cannot be empty</string>
 
 <!-- Button -->
-    <string name="sign_in_button">Sign in</string>
-    <string name="sign_up_button">Sign up</string>
+    <string name="sign_in_button">Sign In</string>
+    <string name="sign_up_button">Sign Up</string>
     <string name="create_button">Create</string>
     <string name="join_button">Join</string>
     <string name="ranking_button">Ranking</string>

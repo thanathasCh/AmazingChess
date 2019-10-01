@@ -23,10 +23,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
-        android:text="Join"
-        android:textSize="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCode" />
+        app:layout_constraintTop_toBottomOf="@+id/etCode"
+        android:text="@string/join_button"
+        android:textSize="24dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

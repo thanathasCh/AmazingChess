@@ -11,10 +11,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Create Room"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="36dp"
+        android:text="@string/create_room_title"/>
 
     <EditText
         android:id="@+id/etNameRoom"
@@ -22,31 +23,32 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:hint="Enter Name Room"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCreateTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tvCreateTitle"
+        android:hint="Enter Name Room"/>
 
     <EditText
         android:id="@+id/etPasswordRoom"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Enter Password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etNameRoom" />
+        app:layout_constraintTop_toBottomOf="@+id/etNameRoom"
+        android:hint="Enter Password"/>
 
     <TextView
         android:id="@+id/tvCreateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etPasswordRoom" />
+        app:layout_constraintTop_toBottomOf="@+id/etPasswordRoom"
+        android:textSize="24dp"
+        android:text="@string/create_button"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
