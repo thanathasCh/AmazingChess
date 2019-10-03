@@ -3,22 +3,44 @@ package com.example.androidmidterm.Register
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import com.example.androidmidterm.Menu.MenuActivity
 import com.example.androidmidterm.R
+import com.example.androidmidterm.Services.DbContext
+import com.example.androidmidterm.Services.GameRoomModel
+import com.example.androidmidterm.Services.UserModel
 import kotlinx.android.synthetic.main.activity_register.*
+import java.sql.Date
 
 class RegisterActivity : AppCompatActivity() {
+
+    val db = DbContext()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
         tvRegisterButton.setOnClickListener {
-            if (etPassword == etConfirmPassword) {
-                var intent = Intent(this, MenuActivity::class.java)
-                startActivity(intent)
+            if (etPassword.text.toString() == etConfirmPassword.text.toString()) {
+                val key = db.Users.push().key
 
+                val User = UserModel (
+                    Id = key!!,
+                    Name = etUsername.text.toString(),
+                    FirstName = "",
+                    LastName = "",
+                    Score = 0,
+                    ImageURL = "",
+                    CreatedAt = Date(System.currentTimeMillis()).toString(),
+                    EditedAt = Date(System.currentTimeMillis()).toString()
+                ).toMap()
+
+                val childUpdate = HashMap<String, Any>()
+                childUpdate["/$key"] = User
+
+                db.Users.updateChildren(childUpdate)
+                //TODO James - after done registration
             } else {
                 val mAlertDialog = AlertDialog.Builder(this@RegisterActivity)
                 mAlertDialog.setTitle("Invalid Register!")

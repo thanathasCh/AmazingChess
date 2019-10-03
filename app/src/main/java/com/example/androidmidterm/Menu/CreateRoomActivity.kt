@@ -25,6 +25,7 @@ class CreateRoomActivity : AppCompatActivity() {
         val key = db.GameRooms.push().key
 
         val GameRoom = GameRoomModel (
+            Id = key!!,
             Name = roomName,
             StatusByte = 1,
             CreatedBy = userId,
@@ -35,5 +36,7 @@ class CreateRoomActivity : AppCompatActivity() {
         childUpdate["/$key"] = GameRoom
 
         db.GameRooms.updateChildren(childUpdate)
+
+        //TODO After create a room
     }
 }

@@ -3,11 +3,13 @@ package com.example.androidmidterm.Login
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AlertDialog
 import com.example.androidmidterm.Menu.MenuActivity
 import com.example.androidmidterm.R
 import com.example.androidmidterm.Register.RegisterActivity
 import com.example.androidmidterm.Services.DbContext
+import com.example.androidmidterm.Services.encrypt
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -21,7 +23,9 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         tvLogin.setOnClickListener {
-            loginAuthentication(tvUserName.text.toString(), tvPassword.hashCode().toString())
+//            var intent = Intent(applicationContext, MenuActivity::class.java)
+//            startActivity(intent)
+            loginAuthentication(tvUserName.text.toString(), encrypt(tvPassword.text.toString()))
         }
 
         tvRegister.setOnClickListener {

@@ -16,6 +16,7 @@ data class UserModel (
     @Exclude
     fun toMap():Map<String, Any?> {
         return mapOf(
+            "Id" to Id,
             "Name" to Name,
             "FirstName" to FirstName,
             "LastName" to LastName,
@@ -45,6 +46,7 @@ data class GameRoomModel (
     @Exclude
     fun toMap(): Map<String, Any?> {
         return mapOf(
+            "Id" to Id,
             "Name" to Name,
             "StatusByte" to StatusByte,
             "CreatedBy" to CreatedBy,

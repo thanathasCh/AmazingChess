@@ -3,6 +3,7 @@ package com.example.androidmidterm.Menu
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.example.androidmidterm.MainActivity
 import com.example.androidmidterm.R
 import kotlinx.android.synthetic.main.activity_join_room.*
@@ -33,10 +34,9 @@ class JoinRoomActivity : AppCompatActivity() {
             }
 
             override fun onDataChange(snapshot: DataSnapshot) {
-                val data = snapshot.children.iterator().next().child("Name").value.toString()
                 if (snapshot.exists()) {
                     val intent = Intent(applicationContext, MainActivity::class.java)
-                    intent.putExtra("roomId", data)
+                    intent.putExtra("gameRoomId", snapshot.children.iterator().next().child("Id").value.toString())
                     startActivity(intent)
                 } else {
                     //TODO Room is not found
