@@ -1,8 +1,11 @@
 package com.example.androidmidterm
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.AttributeSet
+import android.view.View
 import com.example.androidmidterm.SplashScreen.SplashScreenActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
