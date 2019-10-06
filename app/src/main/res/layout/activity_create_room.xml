@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_background"
     tools:context=".Menu.CreateRoomActivity">
 
     <TextView
@@ -15,40 +16,138 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="36dp"
+        android:textColor="@color/text_color"
         android:text="@string/create_room_title"/>
 
     <EditText
         android:id="@+id/etNameRoom"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
         android:ems="10"
         android:inputType="textPersonName"
+        android:layout_marginTop="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCreateTitle"
+        android:drawablePadding="8dp"
+        android:background="@drawable/bg_edit_text"
+        android:textColor="@color/text_color"
         android:hint="Enter Name Room"/>
 
     <EditText
         android:id="@+id/etPasswordRoom"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
         android:ems="10"
+        android:hint="Enter Password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNameRoom"
-        android:hint="Enter Password"/>
+        android:drawablePadding="8dp"
+        android:background="@drawable/bg_edit_text"
+        android:textColor="@color/text_color"/>
 
-    <TextView
-        android:id="@+id/tvCreateButton"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:cardBackgroundColor="@color/button_background"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgTheme">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:gravity="center"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:id="@+id/tvCreateButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/play_button"
+                android:textColor="@color/text_color"
+                android:textSize="24dp" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvSelection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:text="Select Theme:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPasswordRoom"
         android:textSize="24dp"
-        android:text="@string/create_button"/>
+        android:textColor="@color/text_color"/>
+
+    <RadioGroup
+        android:id="@+id/rgTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelection">
+
+        <RadioButton
+            android:id="@+id/radioButton1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/p_momo"
+            android:button="@android:color/transparent"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/try1"
+            android:button="@android:color/transparent"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/try2"
+            android:button="@android:color/transparent"
+            android:checked="true" />
+
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

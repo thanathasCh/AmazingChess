@@ -7,24 +7,34 @@
     android:background="@color/main_background"
     tools:context=".Login.LoginActivity">
 
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/border"
+        android:src="@drawable/white_horse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/tvUserName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="220dp"
         android:layout_marginLeft="28dp"
+        android:layout_marginTop="28dp"
         android:layout_marginRight="28dp"
-        android:paddingLeft="24dp"
-        android:paddingRight="24dp"
+        android:background="@drawable/bg_edit_text"
         android:drawableLeft="@drawable/ic_action_user"
         android:drawablePadding="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/bg_edit_text"
+        android:hint="@string/username_title"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
         android:textColor="@color/text_color"
-        android:hint="@string/username_title"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvGameTitle" />
 
     <EditText
         android:id="@+id/tvPassword"
@@ -50,14 +60,15 @@
         android:id="@+id/cvLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         app:cardBackgroundColor="@color/button_background"
         app:cardCornerRadius="25dp"
         app:cardElevation="10dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRegister">
+        app:layout_constraintTop_toBottomOf="@+id/tvPassword">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -88,12 +99,26 @@
         android:id="@+id/tvRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="24dp"
-        android:text="@string/sign_up_button"
-        android:textColor="@color/text_color"
-        android:textSize="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/tvPassword"
-        app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
+        android:layout_marginTop="16dp"
+        android:textSize="18dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvLogin"
+        android:textColor="@color/sub_text_color"
+        android:text="@string/sign_up_button"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvGameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/splash_screen_sub_title"
+        android:textColor="@color/text_color"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,46 +11,127 @@
         android:id="@+id/imageView"
         android:layout_width="247dp"
         android:layout_height="248dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/p_fair"/>
+        android:src="@drawable/white_horse"/>
 
-    <TextView
-        android:id="@+id/tvCreateRoom"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvCreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="36dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/sub_background"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        android:textColor="@color/text_color"
-        android:textSize="36dp"
-        android:text="@string/create_room_title"/>
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
 
-    <TextView
-        android:id="@+id/tvJoinRoom"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:gravity="center"
+            android:paddingLeft="24dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="24dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:id="@+id/tvCreateRoom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/create_button"
+                android:textColor="@color/text_color"
+                android:textSize="24dp" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvJoin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/sub_background"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCreateRoom"
-        android:textColor="@color/text_color"
-        android:textSize="36dp"
-        android:text="@string/join_room_title"/>
+        app:layout_constraintTop_toBottomOf="@+id/cvCreate">
 
-    <TextView
-        android:id="@+id/tvRanking"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="48dp"
+            android:layout_marginRight="48dp"
+            android:gravity="center"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:id="@+id/tvJoinRoom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/join_button"
+                android:textColor="@color/text_color"
+                android:textSize="24dp" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvRank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/sub_background"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvJoinRoom"
-        android:textColor="@color/text_color"
-        android:textSize="36dp"
-        android:text="@string/ranking_button" />
+        app:layout_constraintTop_toBottomOf="@+id/cvJoin">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:gravity="center"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:id="@+id/tvRanking"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/ranking_button"
+                android:textColor="@color/text_color"
+                android:textSize="24dp" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

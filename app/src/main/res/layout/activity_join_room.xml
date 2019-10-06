@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_background"
     tools:context=".Menu.JoinRoomActivity">
 
     <EditText
@@ -11,21 +12,54 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="116dp"
+        android:layout_marginRight="28dp"
+        android:layout_marginLeft="28dp"
         android:ems="8"
         android:gravity="center"
+        android:inputType="textShortMessage|textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/bg_edit_text"
+        android:textSize="28dp"
+        android:textColor="@color/text_color"/>
 
-    <TextView
-        android:id="@+id/tvJoin"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvJoin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="20dp"
+        app:cardBackgroundColor="@color/button_background"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCode"
-        android:text="@string/join_button"
-        android:textSize="24dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/etCode">
 
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:gravity="center"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingRight="16dp">
+
+        <TextView
+            android:id="@+id/tvJoin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textColor="@color/text_color"
+            android:textSize="24dp"
+            android:text="@string/join_button" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

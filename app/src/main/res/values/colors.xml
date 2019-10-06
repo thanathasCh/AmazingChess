@@ -10,7 +10,7 @@
     <color name="chess_piece">#F19E0F</color>
     <color name="chess_pieceV2">#8F89E6</color>
     <color name="text_color">#F7E1E6</color>
-    <color name="sub_text_color">#C9C7C7</color>
+    <color name="sub_text_color">#03A9F4</color>
     <color name="chess_board">#B8D7EC</color>
     <color name="sub_chess_board">#DDA282</color>
     <color name="edit_text_background">#6BB1B0B0</color>

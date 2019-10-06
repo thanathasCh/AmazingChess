@@ -39,10 +39,6 @@ class RankingAdapter(private val activity: Activity, private val users: java.uti
                 tvScore.text = user.Score.toString()
                 tvRank.text = position.toString()
             }
-
-            Glide.with(view.context)
-                .load(user.ImageUrl)
-                .into(view.ivUser)
         }
     }
 }
