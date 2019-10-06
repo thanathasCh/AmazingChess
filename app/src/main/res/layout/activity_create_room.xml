@@ -123,28 +123,27 @@
 
         <RadioButton
             android:id="@+id/radioButton1"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginRight="16dp"
-            android:background="@drawable/p_momo"
+            android:background="@drawable/board_classic"
             android:button="@android:color/transparent"
             android:checked="true" />
 
         <RadioButton
             android:id="@+id/radioButton2"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginRight="16dp"
-            android:background="@drawable/try1"
+            android:background="@drawable/board_blue"
             android:button="@android:color/transparent"
             android:checked="true" />
 
         <RadioButton
             android:id="@+id/radioButton3"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_marginRight="16dp"
-            android:background="@drawable/try2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/board_vms"
             android:button="@android:color/transparent"
             android:checked="true" />
 
