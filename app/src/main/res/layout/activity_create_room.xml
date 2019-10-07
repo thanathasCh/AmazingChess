@@ -85,7 +85,7 @@
             android:paddingRight="16dp">
 
             <TextView
-                android:id="@+id/tvCreateButton"
+                android:id="@+id/tvPlayButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -122,7 +122,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvSelection">
 
         <RadioButton
-            android:id="@+id/radioButton1"
+            android:id="@+id/rbClassicBoard"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginRight="16dp"
@@ -131,7 +131,7 @@
             android:checked="true" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/rbBlueBoard"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginRight="16dp"
@@ -140,7 +140,7 @@
             android:checked="true" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/rbVMSBoard"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="@drawable/radio_vms_button"
