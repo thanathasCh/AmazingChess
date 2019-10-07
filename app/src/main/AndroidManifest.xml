@@ -18,7 +18,8 @@
         <activity android:name=".Menu.MenuActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Login.LoginActivity"/>
-        <activity android:name=".SplashScreen.SplashScreenActivity">
+        <activity android:name=".SplashScreen.SplashScreenActivity"/>
+        <activity android:name=".chess">
 
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
