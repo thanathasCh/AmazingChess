@@ -126,7 +126,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginRight="16dp"
-            android:background="@drawable/board_classic"
+            android:background="@drawable/radio_classic_button"
             android:button="@android:color/transparent"
             android:checked="true" />
 
@@ -135,7 +135,7 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginRight="16dp"
-            android:background="@drawable/state_pressed"
+            android:background="@drawable/radio_blue_button"
             android:button="@android:color/transparent"
             android:checked="true" />
 
@@ -143,7 +143,7 @@
             android:id="@+id/radioButton3"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="@drawable/board_vms"
+            android:background="@drawable/radio_vms_button"
             android:button="@android:color/transparent"
             android:checked="true" />
 
