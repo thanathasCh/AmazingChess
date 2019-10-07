@@ -28,10 +28,9 @@ class RegisterActivity : AppCompatActivity() {
                 val User = UserModel (
                     Id = key!!,
                     Name = etUsername.text.toString(),
-                    FirstName = "",
-                    LastName = "",
+                    FirstName = etName.text.toString(),
+                    LastName = etLastName.text.toString(),
                     Score = 0,
-                    ImageURL = "",
                     CreatedAt = Date(System.currentTimeMillis()).toString(),
                     EditedAt = Date(System.currentTimeMillis()).toString()
                 ).toMap()

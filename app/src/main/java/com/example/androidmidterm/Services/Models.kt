@@ -9,7 +9,6 @@ data class UserModel (
     var FirstName: String = "",
     var LastName: String = "",
     var Score: Int = 0,
-    var ImageURL: String = "",
     var CreatedAt: String = "",
     var EditedAt: String = ""
 ) {
@@ -21,7 +20,6 @@ data class UserModel (
             "FirstName" to FirstName,
             "LastName" to LastName,
             "Score" to Score,
-            "ImageURL" to ImageURL,
             "CreatedAt" to CreatedAt,
             "EditedAt" to EditedAt
         )
@@ -31,8 +29,7 @@ data class UserModel (
         Id = Id,
         Name = Name,
         FullName = "${FirstName} ${LastName}",
-        Score = Score,
-        ImageUrl = ImageURL
+        Score = Score
     )
 }
 

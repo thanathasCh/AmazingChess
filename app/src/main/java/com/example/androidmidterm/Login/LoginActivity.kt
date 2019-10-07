@@ -23,9 +23,9 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         tvLogin.setOnClickListener {
-//            var intent = Intent(applicationContext, MenuActivity::class.java)
-//            startActivity(intent)
-            loginAuthentication(tvUserName.text.toString(), encrypt(tvPassword.text.toString()))
+            var intent = Intent(applicationContext, MenuActivity::class.java)
+            startActivity(intent)
+//            loginAuthentication(tvUserName.text.toString(), encrypt(tvPassword.text.toString()))
         }
 
         tvRegister.setOnClickListener {
