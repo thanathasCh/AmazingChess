@@ -45,8 +45,6 @@ class CreateRoomActivity : AppCompatActivity() {
             Move = Move()
         ).toMap()
 
-        val Move = Move().toMap()
-
         val GameRoom = GameRoomModel (
             Id = key,
             Name = roomName,
@@ -78,9 +76,6 @@ class CreateRoomActivity : AppCompatActivity() {
                 R.id.rbClassicBoard ->
                     if(checked) {
                         tvPlayButton.setOnClickListener {
-//                            var intent = Intent(this, Waiting::class.java)
-//                            startActivity(intent)
-                            global_board = R.layout.activity_classic_board
                             createGameRoom("User", etNameRoom.text.toString())
                         }
                     }
@@ -88,9 +83,6 @@ class CreateRoomActivity : AppCompatActivity() {
                     if(checked) {
                         tvPlayButton.setOnClickListener {
                             tvPlayButton.setOnClickListener {
-//                                var intent = Intent(this, Waiting::class.java)
-//                                startActivity(intent)
-                                global_board = R.layout.activity_blue_board
                                 createGameRoom("User", etNameRoom.text.toString())
                             }
                         }
@@ -98,7 +90,6 @@ class CreateRoomActivity : AppCompatActivity() {
                 R.id.rbVMSBoard ->
                     if(checked) {
                         tvPlayButton.setOnClickListener {
-                            global_board = R.layout.activity_vms_board
                             createGameRoom("User", etNameRoom.text.toString())
                         }
                     }

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.example.androidmidterm.Services.DbContext
 import com.example.androidmidterm.Services.GameRoomModel
+import com.example.androidmidterm.Services.global_board
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -29,7 +30,12 @@ class Waiting : AppCompatActivity() {
                 Key.text = gameRoom?.Name
 
                 if (gameRoom?.StatusByte == 2) {
-                    val intent = Intent(this@Waiting, chess::class.java)
+                    val intent = when(global_board) {
+                        R.layout.activity_classic_board -> Intent(this@Waiting, ClassicBoard::class.java)
+                        R.layout.activity_blue_board -> Intent(this@Waiting, BlueBoard::class.java)
+                        R.layout.activity_vms_board -> Intent(this@Waiting, VmsBoard::class.java)
+                        else -> Intent(this@Waiting, ClassicBoard::class.java)
+                    }
                     intent.putExtra("MATCH_ID", intent.getStringExtra("MATCH_ID"))
                     intent.putExtra("STATUS", 0)
                     startActivity(intent)
