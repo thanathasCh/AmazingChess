@@ -6,12 +6,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.RadioButton
 import com.example.androidmidterm.R
+import com.example.androidmidterm.Services.*
 import java.sql.Date
-import com.example.androidmidterm.Services.DbContext
 import kotlinx.android.synthetic.main.activity_create_room.*
-import com.example.androidmidterm.Services.GameRoomModel
-import com.example.androidmidterm.Services.Match
-import com.example.androidmidterm.Services.Move
 import com.example.androidmidterm.Waiting
 
 class CreateRoomActivity : AppCompatActivity() {
@@ -22,8 +19,20 @@ class CreateRoomActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_room)
 
+        rbBlueBoard.setOnClickListener {
+            global_board = R.layout.activity_blue_board
+        }
+
+        rbClassicBoard.setOnClickListener {
+            global_board = R.layout.activity_classic_board
+        }
+
+        rbVMSBoard.setOnClickListener {
+            global_board = R.layout.activity_vms_board
+        }
+
         tvPlayButton.setOnClickListener {
-            createGameRoom("user", etNameRoom.text.toString())
+            createGameRoom("User", etNameRoom.text.toString())
         }
     }
 
@@ -69,25 +78,29 @@ class CreateRoomActivity : AppCompatActivity() {
                 R.id.rbClassicBoard ->
                     if(checked) {
                         tvPlayButton.setOnClickListener {
-                            var intent = Intent(this, Waiting::class.java)
-                            startActivity(intent)
+//                            var intent = Intent(this, Waiting::class.java)
+//                            startActivity(intent)
+                            global_board = R.layout.activity_classic_board
+                            createGameRoom("User", etNameRoom.text.toString())
                         }
                     }
                 R.id.rbBlueBoard ->
                     if(checked) {
                         tvPlayButton.setOnClickListener {
                             tvPlayButton.setOnClickListener {
-                                var intent = Intent(this, Waiting::class.java)
-                                startActivity(intent)
-                            }                        }
+//                                var intent = Intent(this, Waiting::class.java)
+//                                startActivity(intent)
+                                global_board = R.layout.activity_blue_board
+                                createGameRoom("User", etNameRoom.text.toString())
+                            }
+                        }
                     }
                 R.id.rbVMSBoard ->
                     if(checked) {
                         tvPlayButton.setOnClickListener {
-                            tvPlayButton.setOnClickListener {
-                                var intent = Intent(this, Waiting::class.java)
-                                startActivity(intent)
-                            }                        }
+                            global_board = R.layout.activity_vms_board
+                            createGameRoom("User", etNameRoom.text.toString())
+                        }
                     }
             }
         }

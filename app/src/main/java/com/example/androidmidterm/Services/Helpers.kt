@@ -1,5 +1,9 @@
 package com.example.androidmidterm.Services
 
+import com.example.androidmidterm.R
+
+var global_board = R.layout.activity_classic_board
+
 fun ByteArray.toHexString() = joinToString("") {"%02x".format(it)}
 
 fun String.encrypt() = toByteArray().toHexString()

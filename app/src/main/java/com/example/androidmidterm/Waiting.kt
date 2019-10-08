@@ -25,7 +25,8 @@ class Waiting : AppCompatActivity() {
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val gameRoom = dataSnapshot.getValue(GameRoomModel::class.java)
-                Key.text = gameRoom?.Id.toString()
+
+                Key.text = gameRoom?.Name
 
                 if (gameRoom?.StatusByte == 2) {
                     val intent = Intent(this@Waiting, chess::class.java)
