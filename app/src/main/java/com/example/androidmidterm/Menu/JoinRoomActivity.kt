@@ -43,7 +43,7 @@ class JoinRoomActivity : AppCompatActivity() {
 //                    gameRoom!!.StatusByte = 2
 //                    db.GameRooms.updateChildren()
                     val intent = Intent(this@JoinRoomActivity, chess::class.java)
-                    intent.putExtra("gameRoomId", gameRoom.Id)
+                    intent.putExtra("gameRoomId", gameRoom?.Id)
                     intent.putExtra("STATUS", 1)
                     startActivity(intent)
                 } else {
