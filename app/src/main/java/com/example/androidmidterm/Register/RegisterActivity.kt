@@ -10,6 +10,7 @@ import com.example.androidmidterm.R
 import com.example.androidmidterm.Services.DbContext
 import com.example.androidmidterm.Services.GameRoomModel
 import com.example.androidmidterm.Services.UserModel
+import com.example.androidmidterm.Services.encrypt
 import kotlinx.android.synthetic.main.activity_register.*
 import java.sql.Date
 
@@ -30,6 +31,7 @@ class RegisterActivity : AppCompatActivity() {
                     Name = etUsername.text.toString(),
                     FirstName = etName.text.toString(),
                     LastName = etLastName.text.toString(),
+                    Password = etPassword.text.toString().encrypt(),
                     Score = 0,
                     CreatedAt = Date(System.currentTimeMillis()).toString(),
                     EditedAt = Date(System.currentTimeMillis()).toString()

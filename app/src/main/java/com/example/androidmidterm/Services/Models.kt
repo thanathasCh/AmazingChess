@@ -8,6 +8,7 @@ data class UserModel (
     var Name: String = "",
     var FirstName: String = "",
     var LastName: String = "",
+    var Password: String = "",
     var Score: Int = 0,
     var CreatedAt: String = "",
     var EditedAt: String = ""
@@ -18,6 +19,7 @@ data class UserModel (
             "Id" to Id,
             "Name" to Name,
             "FirstName" to FirstName,
+            "Passwword" to Password,
             "LastName" to LastName,
             "Score" to Score,
             "CreatedAt" to CreatedAt,

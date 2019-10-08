@@ -25,7 +25,7 @@ class LoginActivity : AppCompatActivity() {
         tvLogin.setOnClickListener {
             var intent = Intent(applicationContext, MenuActivity::class.java)
             startActivity(intent)
-//            loginAuthentication(tvUserName.text.toString(), encrypt(tvPassword.text.toString()))
+            loginAuthentication(tvUserName.text.toString(), tvPassword.text.toString().encrypt())
         }
 
         tvRegister.setOnClickListener {
