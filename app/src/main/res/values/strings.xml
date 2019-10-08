@@ -2,7 +2,7 @@
 
     <string name="app_name">AndroidMidterm</string>
 
-<!-- Titles -->
+    <!-- Titles -->
     <string name="login_title">LOG IN</string>
     <string name="register_title">CREATE ACCOUNT</string>
     <string name="menu_title">MENU</string>
@@ -22,16 +22,16 @@
     <string name="win">WIN</string>
     <string name="lose">LOSE</string>
 
-<!-- Sub-Title -->
+    <!-- Sub-Title -->
     <string name="alert_message_sub_title">Username or Password is wrong, Try again :)</string>
     <string name="alert_messageV2_sub_title">Invalid Username or Password</string>
     <string name="splash_screen_sub_title">AMAZING CHESS</string>
     <string name="credit">By Oat and James</string>
 
-<!-- Error -->
+    <!-- Error -->
     <string name="empty_error">Field cannot be empty</string>
 
-<!-- Button -->
+    <!-- Button -->
     <string name="sign_in_button">Sign In</string>
     <string name="sign_up_button">Sign Up</string>
     <string name="create_button">Create</string>

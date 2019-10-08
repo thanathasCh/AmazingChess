@@ -4,11 +4,14 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import com.example.androidmidterm.MainActivity
 import com.example.androidmidterm.R
 import kotlinx.android.synthetic.main.activity_join_room.*
 import kotlinx.android.synthetic.main.activity_create_room.*
 import com.example.androidmidterm.Services.DbContext
+import com.example.androidmidterm.Services.GameRoomModel
+import com.example.androidmidterm.chess
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -35,11 +38,16 @@ class JoinRoomActivity : AppCompatActivity() {
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
-                    val intent = Intent(applicationContext, MainActivity::class.java)
-                    intent.putExtra("gameRoomId", snapshot.children.iterator().next().child("Id").value.toString())
+                    val gameRoom = snapshot.getValue(GameRoomModel::class.java)
+//                    val ref = db.
+//                    gameRoom!!.StatusByte = 2
+//                    db.GameRooms.updateChildren()
+                    val intent = Intent(this@JoinRoomActivity, chess::class.java)
+                    intent.putExtra("gameRoomId", gameRoom.Id)
+                    intent.putExtra("STATUS", 1)
                     startActivity(intent)
                 } else {
-                    //TODO Room is not found
+                    Toast.makeText(this@JoinRoomActivity, "Room Not Found", Toast.LENGTH_SHORT).show()
                 }
             }
         })

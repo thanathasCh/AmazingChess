@@ -10,6 +10,9 @@ import java.sql.Date
 import com.example.androidmidterm.Services.DbContext
 import kotlinx.android.synthetic.main.activity_create_room.*
 import com.example.androidmidterm.Services.GameRoomModel
+import com.example.androidmidterm.Services.Match
+import com.example.androidmidterm.Services.Move
+import com.example.androidmidterm.Waiting
 
 class CreateRoomActivity : AppCompatActivity() {
 
@@ -26,9 +29,17 @@ class CreateRoomActivity : AppCompatActivity() {
 
     fun createGameRoom(userId: String, roomName: String) {
         val key = db.GameRooms.push().key
+        val match_key = db.Matches.push().key
+
+        val Match = Match (
+            GameRoomId = key!!,
+            Move = Move()
+        ).toMap()
+
+        val Move = Move().toMap()
 
         val GameRoom = GameRoomModel (
-            Id = key!!,
+            Id = key,
             Name = roomName,
             StatusByte = 1,
             CreatedBy = userId,
@@ -36,11 +47,18 @@ class CreateRoomActivity : AppCompatActivity() {
         ).toMap()
 
         val childUpdate = HashMap<String, Any>()
+        val childMatch = HashMap<String, Any>()
+
         childUpdate["/$key"] = GameRoom
+        childMatch["/$match_key"] = Match
 
         db.GameRooms.updateChildren(childUpdate)
+        db.Matches.updateChildren(childMatch)
 
-        //TODO After create a room
+        val intent = Intent(this, Waiting::class.java)
+        intent.putExtra("GAMEROOM_ID", key)
+        intent.putExtra("MATCH_ID", match_key)
+        startActivity(intent)
     }
 
     fun onRadioButtonClicked(view: View) {

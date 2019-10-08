@@ -11,16 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Register.RegisterActivity"></activity>
+        <activity android:name=".Waiting"></activity>
+        <activity android:name=".Register.RegisterActivity" />
         <activity android:name=".Menu.Ranking.RankingActivity" />
         <activity android:name=".Menu.JoinRoomActivity" />
         <activity android:name=".Menu.CreateRoomActivity" />
         <activity android:name=".Menu.MenuActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".Login.LoginActivity"/>
-        <activity android:name=".SplashScreen.SplashScreenActivity"/>
-        <activity android:name=".chess">
-
+        <activity android:name=".Login.LoginActivity" />
+        <activity android:name=".SplashScreen.SplashScreenActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
 
