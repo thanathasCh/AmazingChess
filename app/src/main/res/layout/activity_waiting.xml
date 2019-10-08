@@ -2,28 +2,62 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/main_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Waiting">
 
-    <TextView
-        android:id="@+id/Key"
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvKey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="103dp"
-        android:layout_marginTop="77dp"
-        android:text="TextView"
-        android:textSize="50sp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/sub_background"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tvWaiting">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:gravity="center"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:id="@+id/Key"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="Key"
+                android:textColor="@color/text_color"
+                tools:textSize="44dp" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvWaiting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="184dp"
         android:layout_marginTop="264dp"
-        android:text="Waiting"
+        android:text="Waiting..."
+        android:textSize="36dp"
+        android:textColor="@color/text_color"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

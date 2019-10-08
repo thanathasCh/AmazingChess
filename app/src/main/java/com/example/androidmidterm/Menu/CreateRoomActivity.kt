@@ -69,20 +69,25 @@ class CreateRoomActivity : AppCompatActivity() {
                 R.id.rbClassicBoard ->
                     if(checked) {
                         tvPlayButton.setOnClickListener {
-                            //Intent to main game activity
+                            var intent = Intent(this, Waiting::class.java)
+                            startActivity(intent)
                         }
                     }
                 R.id.rbBlueBoard ->
                     if(checked) {
                         tvPlayButton.setOnClickListener {
-                            //Intent to main game activity
-                        }
+                            tvPlayButton.setOnClickListener {
+                                var intent = Intent(this, Waiting::class.java)
+                                startActivity(intent)
+                            }                        }
                     }
                 R.id.rbVMSBoard ->
                     if(checked) {
                         tvPlayButton.setOnClickListener {
-                            //Intent to main game activity
-                        }
+                            tvPlayButton.setOnClickListener {
+                                var intent = Intent(this, Waiting::class.java)
+                                startActivity(intent)
+                            }                        }
                     }
             }
         }
