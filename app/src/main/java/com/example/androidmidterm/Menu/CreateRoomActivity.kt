@@ -1,7 +1,10 @@
 package com.example.androidmidterm.Menu
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.RadioButton
 import com.example.androidmidterm.R
 import java.sql.Date
 import com.example.androidmidterm.Services.DbContext
@@ -16,7 +19,7 @@ class CreateRoomActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_room)
 
-        tvCreateButton.setOnClickListener {
+        tvPlayButton.setOnClickListener {
             createGameRoom("user", etNameRoom.text.toString())
         }
     }
@@ -38,5 +41,32 @@ class CreateRoomActivity : AppCompatActivity() {
         db.GameRooms.updateChildren(childUpdate)
 
         //TODO After create a room
+    }
+
+    fun onRadioButtonClicked(view: View) {
+        if (view is RadioButton) {
+            val checked = view.isChecked
+
+            when (view.getId()) {
+                R.id.rbClassicBoard ->
+                    if(checked) {
+                        tvPlayButton.setOnClickListener {
+                            //Intent to main game activity
+                        }
+                    }
+                R.id.rbBlueBoard ->
+                    if(checked) {
+                        tvPlayButton.setOnClickListener {
+                            //Intent to main game activity
+                        }
+                    }
+                R.id.rbVMSBoard ->
+                    if(checked) {
+                        tvPlayButton.setOnClickListener {
+                            //Intent to main game activity
+                        }
+                    }
+            }
+        }
     }
 }

@@ -39,5 +39,6 @@
     <string name="ranking_button">Ranking</string>
     <string name="ok_button">OK</string>
     <string name="play_button">Play</string>
+    <string name="give_up">Give Up</string>
 
 </resources>
