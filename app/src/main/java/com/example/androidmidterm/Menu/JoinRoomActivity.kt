@@ -38,12 +38,16 @@ class JoinRoomActivity : AppCompatActivity() {
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
-                    val gameRoom = snapshot.getValue(GameRoomModel::class.java)
-//                    val ref = db.
-//                    gameRoom!!.StatusByte = 2
-//                    db.GameRooms.updateChildren()
+                    val gameRoom = GameRoomModel()
+
+                    snapshot.children.forEach {
+                        gameRoom.Id = it.child("Id").value.toString()
+                        gameRoom.Name = it.child("Name").value.toString()
+                        gameRoom.StatusByte = it.child("StatusByte").value.toString().toInt()
+                    }
+                    db.GameRooms.child(gameRoom.Id).child("StatusByte").setValue(2)
                     val intent = Intent(this@JoinRoomActivity, chess::class.java)
-                    intent.putExtra("gameRoomId", gameRoom?.Id)
+                    intent.putExtra("gameRoomId", gameRoom.Id)
                     intent.putExtra("STATUS", 1)
                     startActivity(intent)
                 } else {
