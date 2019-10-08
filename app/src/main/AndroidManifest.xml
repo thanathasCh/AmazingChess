@@ -11,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".BlueBoard"></activity>
+        <activity android:name=".VmsBoard"></activity>
+        <activity android:name=".ClassicBoard"></activity>
         <activity android:name=".Waiting"></activity>
         <activity android:name=".Register.RegisterActivity" />
         <activity android:name=".Menu.Ranking.RankingActivity" />

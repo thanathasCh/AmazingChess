@@ -45,8 +45,6 @@ class CreateRoomActivity : AppCompatActivity() {
             Move = Move()
         ).toMap()
 
-        val Move = Move().toMap()
-
         val GameRoom = GameRoomModel (
             Id = key,
             Name = roomName,

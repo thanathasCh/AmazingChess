@@ -40,10 +40,11 @@
                 android:id="@+id/Key"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
                 android:gravity="center"
                 android:text="Key"
                 android:textColor="@color/text_color"
-                tools:textSize="44dp" />
+                android:textSize="44dp" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
