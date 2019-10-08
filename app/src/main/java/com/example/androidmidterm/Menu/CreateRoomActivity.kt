@@ -69,40 +69,4 @@ class CreateRoomActivity : AppCompatActivity() {
         intent.putExtra("MATCH_ID", match_key)
         startActivity(intent)
     }
-
-    fun onRadioButtonClicked(view: View) {
-        if (view is RadioButton) {
-            val checked = view.isChecked
-
-            when (view.getId()) {
-                R.id.rbClassicBoard ->
-                    if(checked) {
-                        tvPlayButton.setOnClickListener {
-//                            var intent = Intent(this, Waiting::class.java)
-//                            startActivity(intent)
-                            global_board = R.layout.activity_classic_board
-                            createGameRoom("User", etNameRoom.text.toString())
-                        }
-                    }
-                R.id.rbBlueBoard ->
-                    if(checked) {
-                        tvPlayButton.setOnClickListener {
-                            tvPlayButton.setOnClickListener {
-//                                var intent = Intent(this, Waiting::class.java)
-//                                startActivity(intent)
-                                global_board = R.layout.activity_blue_board
-                                createGameRoom("User", etNameRoom.text.toString())
-                            }
-                        }
-                    }
-                R.id.rbVMSBoard ->
-                    if(checked) {
-                        tvPlayButton.setOnClickListener {
-                            global_board = R.layout.activity_vms_board
-                            createGameRoom("User", etNameRoom.text.toString())
-                        }
-                    }
-            }
-        }
-    }
 }
