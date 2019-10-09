@@ -42,8 +42,9 @@ class RankingActivity : AppCompatActivity() {
                 }
                 top10.sortByDescending { it.Score }
                 Log.d("Data", top10.toString())
-                rvRanking.layoutManager = LinearLayoutManager(this@RankingActivity)
                 rvRanking.adapter = RankingAdapter(this@RankingActivity, top10)
+                rvRanking.layoutManager = LinearLayoutManager(this@RankingActivity)
+
             }
 
         })
