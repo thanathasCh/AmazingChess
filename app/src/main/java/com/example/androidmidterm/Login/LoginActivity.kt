@@ -35,16 +35,12 @@ class LoginActivity : AppCompatActivity() {
         data.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) { }
 
-            override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.exists() && snapshot.children.iterator().next().child("Password").value.toString().encrypt() == password) {
-                    tvLogin.setOnClickListener {
-                        startActivity(Intent(applicationContext, MenuActivity::class.java))
-                    }
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if (dataSnapshot.exists() && dataSnapshot.children.iterator().next().child("Password").value.toString().encrypt() == password) {
+                    startActivity(Intent(applicationContext, MenuActivity::class.java))
                 } else {
-                    tvLogin.setOnClickListener {
-                        warningBox(this@LoginActivity, "Account not found!",
-                            "Invalid Username or Password")
-                    }
+                    warningBox(this@LoginActivity, "Account not found!",
+                        "Invalid Username or Password")
                 }
             }
 
