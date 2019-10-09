@@ -22,7 +22,7 @@ class Waiting : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_waiting)
-        val data = db.GameRooms.child(intent.getStringExtra("GAMEROOM_ID"))
+        val data = db.GameRooms.child(intent.getStringExtra("GAME_ROOM_ID"))
 
         data.addValueEventListener(object: ValueEventListener {
             override fun onCancelled(p0: DatabaseError) { }

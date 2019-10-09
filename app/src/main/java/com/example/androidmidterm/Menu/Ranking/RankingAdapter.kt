@@ -1,13 +1,10 @@
 package com.example.androidmidterm.Menu.Ranking
 
 import android.app.Activity
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.androidmidterm.R
 import com.example.androidmidterm.Services.UserViewModel
 import kotlinx.android.synthetic.main.ranking_item.view.*
@@ -27,9 +24,9 @@ class RankingAdapter(private val activity: Activity, private val users: java.uti
         holder.bindUser(users[position], position + 1)
     }
 
-    class RankingHolder(view: View):
-            RecyclerView.ViewHolder(view) {
-        private val view: View = view
+    class RankingHolder(v: View):
+            RecyclerView.ViewHolder(v) {
+        private val view: View = v
         private var user: UserViewModel? = null
 
         fun bindUser(user: UserViewModel, position: Int) {

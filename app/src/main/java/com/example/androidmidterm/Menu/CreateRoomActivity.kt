@@ -38,12 +38,12 @@ class CreateRoomActivity : AppCompatActivity() {
         val key = db.GameRooms.push().key
         val match_key = db.Matches.push().key
 
-        val Match = Match (
+        val Match = Match(
             GameRoomId = key!!,
             Move = Move()
         ).toMap()
 
-        val GameRoom = GameRoomModel (
+        val GameRoom = GameRoomModel(
             Id = key,
             Name = roomName,
             StatusByte = 1
@@ -59,37 +59,8 @@ class CreateRoomActivity : AppCompatActivity() {
         db.Matches.updateChildren(childMatch)
 
         val intent = Intent(this, Waiting::class.java)
-        intent.putExtra("GAMEROOM_ID", key)
+        intent.putExtra("GAME_ROOM_ID", key)
         intent.putExtra("MATCH_ID", match_key)
         startActivity(intent)
-    }
-
-    fun onRadioButtonClicked(view: View) {
-        if (view is RadioButton) {
-            val checked = view.isChecked
-
-            when (view.getId()) {
-                R.id.rbClassicBoard ->
-                    if(checked) {
-                        tvPlayButton.setOnClickListener {
-                            createGameRoom(etNameRoom.text.toString())
-                        }
-                    }
-                R.id.rbBlueBoard ->
-                    if(checked) {
-                        tvPlayButton.setOnClickListener {
-                            tvPlayButton.setOnClickListener {
-                                createGameRoom(etNameRoom.text.toString())
-                            }
-                        }
-                    }
-                R.id.rbVMSBoard ->
-                    if(checked) {
-                        tvPlayButton.setOnClickListener {
-                            createGameRoom(etNameRoom.text.toString())
-                        }
-                    }
-            }
-        }
     }
 }

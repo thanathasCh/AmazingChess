@@ -1,7 +1,6 @@
 package com.example.androidmidterm.Services
 
 import com.google.firebase.database.Exclude
-import java.sql.Date
 
 data class UserModel (
     var Id: String = "",

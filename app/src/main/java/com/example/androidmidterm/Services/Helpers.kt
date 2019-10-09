@@ -1,5 +1,7 @@
 package com.example.androidmidterm.Services
 
+import android.app.Activity
+import androidx.appcompat.app.AlertDialog
 import com.example.androidmidterm.R
 
 var global_board = R.layout.activity_classic_board
@@ -38,4 +40,16 @@ fun walk(Board: Array<Array<out Pieces?>>, x: Int, y: Int) {
 
 fun endGame() {
 
+}
+
+fun warningBox(a: Activity, title: String, context: String) {
+    val mAlertDialog = AlertDialog.Builder(a)
+    mAlertDialog.setTitle(title)
+    mAlertDialog.setMessage(context)
+    mAlertDialog.setIcon(R.drawable.p_momo)
+
+    mAlertDialog.setNegativeButton("OK") { dialog, _ ->
+        dialog.dismiss()
+    }
+    mAlertDialog.show()
 }

@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_join_room.*
 import com.example.androidmidterm.Services.DbContext
 import com.example.androidmidterm.Services.GameRoomModel
 import com.example.androidmidterm.Services.global_board
+import com.example.androidmidterm.Services.warningBox
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -32,9 +33,7 @@ class JoinRoomActivity : AppCompatActivity() {
     fun joinRoom(roomName: String) {
         val data = db.GameRooms.orderByChild("Name").equalTo(roomName)
         data.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onCancelled(p0: DatabaseError) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun onCancelled(p0: DatabaseError) { }
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
@@ -56,7 +55,8 @@ class JoinRoomActivity : AppCompatActivity() {
                     intent.putExtra("STATUS", 1)
                     startActivity(intent)
                 } else {
-                    Toast.makeText(this@JoinRoomActivity, "Room Not Found", Toast.LENGTH_SHORT).show()
+                    warningBox(this@JoinRoomActivity, "Room Not Found",
+                        "Please check your room name again.")
                 }
             }
         })

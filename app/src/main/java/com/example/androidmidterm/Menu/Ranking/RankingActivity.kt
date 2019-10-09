@@ -15,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_ranking.*
 
 class RankingActivity : AppCompatActivity() {
 
-    val db = DbContext()
+    private val db = DbContext()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,9 +24,7 @@ class RankingActivity : AppCompatActivity() {
         val data = db.Users.orderByChild("Score").limitToLast(10)
 
         data.addListenerForSingleValueEvent(object: ValueEventListener {
-            override fun onCancelled(p0: DatabaseError) {
-                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-            }
+            override fun onCancelled(p0: DatabaseError) { }
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val top10 = arrayListOf<UserViewModel>()

@@ -14,17 +14,17 @@ class MenuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
 
         tvCreateRoom.setOnClickListener {
-            var createRoom = Intent(this, CreateRoomActivity::class.java)
+            val createRoom = Intent(this, CreateRoomActivity::class.java)
             startActivity(createRoom)
         }
 
         tvJoinRoom.setOnClickListener {
-            var joinRoom = Intent(this, JoinRoomActivity::class.java)
+            val joinRoom = Intent(this, JoinRoomActivity::class.java)
             startActivity(joinRoom)
         }
 
         tvRanking.setOnClickListener {
-            var rank = Intent(this, RankingActivity::class.java)
+            val rank = Intent(this, RankingActivity::class.java)
             startActivity(rank)
         }
     }
