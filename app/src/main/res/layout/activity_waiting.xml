@@ -5,7 +5,7 @@
     android:background="@color/main_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Waiting">
+    tools:context=".Menu.Waiting">
 
 
 

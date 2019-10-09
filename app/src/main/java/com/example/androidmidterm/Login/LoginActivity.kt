@@ -23,9 +23,9 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         tvLogin.setOnClickListener {
-            var intent = Intent(applicationContext, MenuActivity::class.java)
-            startActivity(intent)
-//            loginAuthentication(tvUserName.text.toString(), tvPassword.text.toString().encrypt())
+//            var intent = Intent(applicationContext, MenuActivity::class.java)
+//            startActivity(intent)
+            loginAuthentication(tvUserName.text.toString(), tvPassword.text.toString().encrypt())
         }
 
         tvRegister.setOnClickListener {
@@ -42,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
             override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.exists() && snapshot.children.iterator().next().child("Password").value.toString() == password) {
+                if (snapshot.exists() && snapshot.children.iterator().next().child("Password").value.toString().encrypt() == password) {
                     tvLogin.setOnClickListener {
                         var intent = Intent(applicationContext, MenuActivity::class.java)
                         startActivity(intent)

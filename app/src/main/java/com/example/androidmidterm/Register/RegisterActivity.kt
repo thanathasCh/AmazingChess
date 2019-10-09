@@ -32,9 +32,7 @@ class RegisterActivity : AppCompatActivity() {
                     FirstName = etName.text.toString(),
                     LastName = etLastName.text.toString(),
                     Password = etPassword.text.toString().encrypt(),
-                    Score = 0,
-                    CreatedAt = Date(System.currentTimeMillis()).toString(),
-                    EditedAt = Date(System.currentTimeMillis()).toString()
+                    Score = 0
                 ).toMap()
 
                 val childUpdate = HashMap<String, Any>()

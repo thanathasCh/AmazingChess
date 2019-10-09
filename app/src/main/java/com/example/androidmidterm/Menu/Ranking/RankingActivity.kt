@@ -37,9 +37,7 @@ class RankingActivity : AppCompatActivity() {
                         Name = it.child("Name").value.toString(),
                         FirstName = it.child("FirstName").value.toString(),
                         LastName =  it.child("LastName").value.toString(),
-                        Score = it.child("Score").value.toString().toInt(),
-                        CreatedAt = it.child("CreatedAt").value.toString(),
-                        EditedAt = it.child("EditedAt").value.toString()
+                        Score = it.child("Score").value.toString().toInt()
                     ).toViewModel())
                 }
                 top10.sortByDescending { it.Score }

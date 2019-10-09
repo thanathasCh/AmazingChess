@@ -3,15 +3,15 @@ package com.example.androidmidterm.Menu
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
-import com.example.androidmidterm.MainActivity
-import com.example.androidmidterm.R
+import com.example.androidmidterm.*
+import com.example.androidmidterm.PlayBoard.BlueBoard
+import com.example.androidmidterm.PlayBoard.ClassicBoard
+import com.example.androidmidterm.PlayBoard.VmsBoard
 import kotlinx.android.synthetic.main.activity_join_room.*
-import kotlinx.android.synthetic.main.activity_create_room.*
 import com.example.androidmidterm.Services.DbContext
 import com.example.androidmidterm.Services.GameRoomModel
-import com.example.androidmidterm.chess
+import com.example.androidmidterm.Services.global_board
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -46,7 +46,12 @@ class JoinRoomActivity : AppCompatActivity() {
                         gameRoom.StatusByte = it.child("StatusByte").value.toString().toInt()
                     }
                     db.GameRooms.child(gameRoom.Id).child("StatusByte").setValue(2)
-                    val intent = Intent(this@JoinRoomActivity, chess::class.java)
+                    val intent = when(global_board) {
+                        R.layout.activity_classic_board -> Intent(this@JoinRoomActivity, ClassicBoard::class.java)
+                        R.layout.activity_blue_board -> Intent(this@JoinRoomActivity, BlueBoard::class.java)
+                        R.layout.activity_vms_board -> Intent(this@JoinRoomActivity, VmsBoard::class.java)
+                        else -> Intent(this@JoinRoomActivity, ClassicBoard::class.java)
+                    }
                     intent.putExtra("gameRoomId", gameRoom.Id)
                     intent.putExtra("STATUS", 1)
                     startActivity(intent)

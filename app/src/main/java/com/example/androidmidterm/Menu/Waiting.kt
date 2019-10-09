@@ -1,12 +1,15 @@
-package com.example.androidmidterm
+package com.example.androidmidterm.Menu
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import com.example.androidmidterm.PlayBoard.BlueBoard
+import com.example.androidmidterm.PlayBoard.ClassicBoard
+import com.example.androidmidterm.R
 import com.example.androidmidterm.Services.DbContext
 import com.example.androidmidterm.Services.GameRoomModel
 import com.example.androidmidterm.Services.global_board
+import com.example.androidmidterm.PlayBoard.VmsBoard
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener

@@ -11,10 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BlueBoard"></activity>
-        <activity android:name=".VmsBoard"></activity>
-        <activity android:name=".ClassicBoard"></activity>
-        <activity android:name=".Waiting"></activity>
+        <activity android:name=".PlayBoard.BlueBoard"></activity>
+        <activity android:name=".PlayBoard.VmsBoard"></activity>
+        <activity android:name=".PlayBoard.ClassicBoard"></activity>
+        <activity android:name=".Menu.Waiting"></activity>
         <activity android:name=".Register.RegisterActivity" />
         <activity android:name=".Menu.Ranking.RankingActivity" />
         <activity android:name=".Menu.JoinRoomActivity" />

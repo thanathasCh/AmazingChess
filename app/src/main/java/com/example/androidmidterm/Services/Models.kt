@@ -9,9 +9,7 @@ data class UserModel (
     var FirstName: String = "",
     var LastName: String = "",
     var Password: String = "",
-    var Score: Int = 0,
-    var CreatedAt: String = "",
-    var EditedAt: String = ""
+    var Score: Int = 0
 ) {
     @Exclude
     fun toMap():Map<String, Any?> {
@@ -19,11 +17,9 @@ data class UserModel (
             "Id" to Id,
             "Name" to Name,
             "FirstName" to FirstName,
-            "Passwword" to Password,
+            "Password" to Password,
             "LastName" to LastName,
-            "Score" to Score,
-            "CreatedAt" to CreatedAt,
-            "EditedAt" to EditedAt
+            "Score" to Score
         )
     }
 
@@ -38,18 +34,14 @@ data class UserModel (
 data class GameRoomModel (
     var Id: String = "",
     var Name: String = "",
-    var StatusByte: Int = 0,
-    var CreatedBy: String = "",
-    var CreatedAt: String = ""
+    var StatusByte: Int = 0
 ) {
     @Exclude
     fun toMap(): Map<String, Any?> {
         return mapOf(
             "Id" to Id,
             "Name" to Name,
-            "StatusByte" to StatusByte,
-            "CreatedBy" to CreatedBy,
-            "CreatedAt" to CreatedAt
+            "StatusByte" to StatusByte
         )
     }
 

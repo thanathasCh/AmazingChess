@@ -31,3 +31,11 @@ fun createBoardBlack(): Array<Array<out Pieces?>> =
         arrayOf<Pieces?>(Pieces(1, 2), Pieces(1, 2), Pieces(1, 2), Pieces(1, 2), Pieces(1, 2), Pieces(1, 2), Pieces(1, 2), Pieces(1, 2)),
         arrayOf(Pieces(2, 2), Pieces(3, 2), Pieces(4, 2), Pieces(5, 2), Pieces(6, 2), Pieces(4, 2), Pieces(3, 2), Pieces(2,2))
     )
+
+fun walk(Board: Array<Array<out Pieces?>>, x: Int, y: Int) {
+
+}
+
+fun endGame() {
+
+}

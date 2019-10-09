@@ -7,9 +7,7 @@ import android.view.View
 import android.widget.RadioButton
 import com.example.androidmidterm.R
 import com.example.androidmidterm.Services.*
-import java.sql.Date
 import kotlinx.android.synthetic.main.activity_create_room.*
-import com.example.androidmidterm.Waiting
 
 class CreateRoomActivity : AppCompatActivity() {
 
@@ -32,11 +30,11 @@ class CreateRoomActivity : AppCompatActivity() {
         }
 
         tvPlayButton.setOnClickListener {
-            createGameRoom("User", etNameRoom.text.toString())
+            createGameRoom(etNameRoom.text.toString())
         }
     }
 
-    fun createGameRoom(userId: String, roomName: String) {
+    fun createGameRoom(roomName: String) {
         val key = db.GameRooms.push().key
         val match_key = db.Matches.push().key
 
@@ -48,9 +46,7 @@ class CreateRoomActivity : AppCompatActivity() {
         val GameRoom = GameRoomModel (
             Id = key,
             Name = roomName,
-            StatusByte = 1,
-            CreatedBy = userId,
-            CreatedAt = Date(System.currentTimeMillis()).toString()
+            StatusByte = 1
         ).toMap()
 
         val childUpdate = HashMap<String, Any>()
@@ -76,21 +72,21 @@ class CreateRoomActivity : AppCompatActivity() {
                 R.id.rbClassicBoard ->
                     if(checked) {
                         tvPlayButton.setOnClickListener {
-                            createGameRoom("User", etNameRoom.text.toString())
+                            createGameRoom(etNameRoom.text.toString())
                         }
                     }
                 R.id.rbBlueBoard ->
                     if(checked) {
                         tvPlayButton.setOnClickListener {
                             tvPlayButton.setOnClickListener {
-                                createGameRoom("User", etNameRoom.text.toString())
+                                createGameRoom(etNameRoom.text.toString())
                             }
                         }
                     }
                 R.id.rbVMSBoard ->
                     if(checked) {
                         tvPlayButton.setOnClickListener {
-                            createGameRoom("User", etNameRoom.text.toString())
+                            createGameRoom(etNameRoom.text.toString())
                         }
                     }
             }
