@@ -11,32 +11,103 @@
         android:id="@+id/etCode"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="28dp"
         android:layout_marginTop="116dp"
         android:layout_marginRight="28dp"
-        android:layout_marginLeft="28dp"
+        android:background="@drawable/bg_edit_text"
         android:ems="8"
         android:gravity="center"
+        android:hint="Name Room"
         android:inputType="textShortMessage|textPersonName"
+        android:textColor="@color/text_color"
+        android:textSize="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etPasswordJoinRoom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="28dp"
         android:background="@drawable/bg_edit_text"
+        android:ems="8"
+        android:gravity="center"
+        android:hint="Passwod Room"
+        android:inputType="textShortMessage|textPersonName"
+        android:textColor="@color/text_color"
         android:textSize="28dp"
-        android:textColor="@color/text_color"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etCode" />
+
+
+    <TextView
+        android:id="@+id/tvSelection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:text="Select Theme:"
+        android:textColor="@color/text_color"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPasswordJoinRoom" />
+
+    <RadioGroup
+        android:id="@+id/rgTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSelection">
+
+        <RadioButton
+            android:id="@+id/rbClassicBoard"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/radio_classic_button"
+            android:button="@android:color/transparent"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/rbBlueBoard"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/radio_blue_button"
+            android:button="@android:color/transparent"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/rbVMSBoard"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/radio_vms_button"
+            android:button="@android:color/transparent"
+            android:checked="true" />
+
+    </RadioGroup>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvJoin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
         app:cardBackgroundColor="@color/button_background"
         app:cardCornerRadius="25dp"
         app:cardElevation="10dp"
-        android:clickable="true"
-        android:foreground="?android:attr/selectableItemBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etCode">
+        app:layout_constraintTop_toBottomOf="@+id/rgTheme">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -50,15 +121,15 @@
             android:paddingEnd="16dp"
             android:paddingRight="16dp">
 
-        <TextView
-            android:id="@+id/tvJoin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-            android:textColor="@color/text_color"
-            android:textSize="24dp"
-            android:text="@string/join_button" />
+            <TextView
+                android:id="@+id/tvJoin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/join_button"
+                android:textColor="@color/text_color"
+                android:textSize="24dp" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
