@@ -19,6 +19,7 @@
     <color name="sub_chess_board3">#F4EFA4</color>
     <color name="edit_text_background">#6BB1B0B0</color>
 
+    <color name="solid">#DFD8EC</color>
     <color name="alpha">#00FFFFFF</color>
 
 </resources>

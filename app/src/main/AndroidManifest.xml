@@ -19,12 +19,12 @@
         <activity android:name=".Menu.Ranking.RankingActivity" />
         <activity android:name=".Menu.JoinRoomActivity" />
         <activity android:name=".Menu.CreateRoomActivity" />
-        <activity android:name=".Menu.MenuActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Login.LoginActivity" />
-        <activity android:name=".SplashScreen.SplashScreenActivity">
+        <activity android:name=".SplashScreen.SplashScreenActivity"/>
+        <activity android:name=".Menu.MenuActivity" >
 
-            <intent-filter>
+        <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
 
                 <action android:name="android.intent.action.MAIN" />

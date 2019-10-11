@@ -37,7 +37,7 @@ class MenuActivity : AppCompatActivity() {
     }
 
     fun playMusic(){
-        mp = MediaPlayer.create(this, R.raw.hail_to_the_king)
+        mp = MediaPlayer.create(this, R.raw.chopin_ballade_no1_in_g_minor)
         mp.start()
         mp.isLooping = true
         mp.setVolume(0.5f, 0.5f)

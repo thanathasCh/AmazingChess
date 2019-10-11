@@ -12,8 +12,8 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="44dp"
-        android:background="@drawable/border"
-        android:src="@drawable/white_horse"
+        android:background="@drawable/bg_border_solid"
+        android:src="@drawable/new_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
