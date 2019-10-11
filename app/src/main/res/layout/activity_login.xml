@@ -28,6 +28,8 @@
         android:background="@drawable/bg_edit_text"
         android:drawableLeft="@drawable/ic_action_user"
         android:drawablePadding="8dp"
+        android:textSize="20dp"
+        android:fontFamily="@font/lin_libertine_ri"
         android:hint="@string/username_title"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
@@ -49,9 +51,11 @@
         android:inputType="textPassword"
         android:drawableLeft="@drawable/ic_action_lock"
         android:drawablePadding="8dp"
+        android:fontFamily="@font/lin_libertine_ri"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvUserName"
+        android:textSize="20dp"
         android:background="@drawable/bg_edit_text"
         android:textColor="@color/text_color"
         android:hint="@string/password_title"/>
@@ -89,6 +93,7 @@
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 android:text="@string/sign_in_button"
+                android:fontFamily="@font/lin_libertine_ri"
                 android:textColor="@color/text_color"
                 android:textSize="24dp" />
 
@@ -100,6 +105,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/lin_libertine_ri"
         android:textSize="18dp"
         android:clickable="true"
         android:foreground="?android:attr/selectableItemBackground"

@@ -2,11 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/main_background"
+    android:background="@drawable/waiting_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Menu.Waiting">
-
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvKey"
@@ -42,9 +41,51 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:gravity="center"
-                android:text="Key"
+                android:fontFamily="@font/lin_libertine_ri"
+                android:text="Key Room"
                 android:textColor="@color/text_color"
-                android:textSize="44dp" />
+                android:textSize="36dp" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvKeyPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/sub_background"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvKey">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:gravity="center"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:id="@+id/keyPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/lin_libertine_ri"
+                android:gravity="center"
+                android:text="Password"
+                android:textColor="@color/text_color"
+                android:textSize="36dp" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

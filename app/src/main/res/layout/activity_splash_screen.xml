@@ -25,7 +25,8 @@
         android:layout_marginTop="32dp"
         android:text="@string/splash_screen_sub_title"
         android:textColor="@color/text_color"
-        android:textSize="24dp"
+        android:textSize="36dp"
+        android:fontFamily="@font/pineappl_demo_3o_gz"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,8 +42,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvSplashTitle"
-        android:textSize="16dp"
-        android:textColor="@color/sub_text_color"
+        android:textSize="18dp"
+        android:fontFamily="@font/lin_libertine_ri"
+        android:textColor="@color/sub_text_color2"
         android:text="@string/credit"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

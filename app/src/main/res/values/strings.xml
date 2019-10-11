@@ -26,7 +26,7 @@
     <string name="alert_message_sub_title">Username or Password is wrong, Try again :)</string>
     <string name="alert_messageV2_sub_title">Invalid Username or Password</string>
     <string name="splash_screen_sub_title">AMAZING CHESS</string>
-    <string name="credit">By Oat and James</string>
+    <string name="credit">© Oat and James 2019</string>
 
     <!-- Error -->
     <string name="empty_error">Field cannot be empty</string>

@@ -4,19 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_background"
+    android:background="@drawable/join_background"
     tools:context=".Menu.CreateRoomActivity">
 
     <TextView
         android:id="@+id/tvCreateTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:textSize="36dp"
-        android:textColor="@color/text_color"
+        android:fontFamily="@font/wicked_mouse_agok"
         android:text="@string/create_room_title"/>
 
     <EditText
@@ -35,9 +35,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCreateTitle"
         android:drawablePadding="8dp"
+        android:gravity="center"
+        android:fontFamily="@font/lin_libertine_ri"
+        android:textSize="20dp"
         android:background="@drawable/bg_edit_text"
         android:textColor="@color/text_color"
-        android:hint="Enter Name Room"/>
+        android:hint="Enter Name Room "/>
 
     <EditText
         android:id="@+id/etPasswordRoom"
@@ -49,8 +52,11 @@
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
         android:ems="10"
-        android:hint="Enter Password"
+        android:textSize="20dp"
+        android:fontFamily="@font/lin_libertine_ri"
+        android:hint="Enter Password Room"
         android:inputType="textPassword"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNameRoom"
@@ -91,6 +97,7 @@
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 android:text="@string/play_button"
+                android:fontFamily="@font/lin_libertine_ri"
                 android:textColor="@color/text_color"
                 android:textSize="24dp" />
 
@@ -109,6 +116,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPasswordRoom"
         android:textSize="24dp"
+        android:fontFamily="@font/lin_libertine_ri"
         android:textColor="@color/text_color"/>
 
     <RadioGroup
@@ -148,5 +156,15 @@
             android:checked="true" />
 
     </RadioGroup>
+
+    <ImageView
+        android:id="@+id/ivPlay"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:src="@drawable/ic_action_play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tvCreateTitle"
+        app:layout_constraintTop_toTopOf="@+id/tvCreateTitle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

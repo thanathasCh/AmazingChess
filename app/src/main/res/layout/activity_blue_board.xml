@@ -9,7 +9,7 @@
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".chess">
+    tools:context=".PlayBoard.BlueBoard">
 
     <TextView
         android:id="@+id/tvTitle"
@@ -647,6 +647,7 @@
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 android:text="Give Up"
+                android:fontFamily="@font/lin_libertine_ri"
                 android:textColor="@color/text_color"
                 android:textSize="24dp" />
 

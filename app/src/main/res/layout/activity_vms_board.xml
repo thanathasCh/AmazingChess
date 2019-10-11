@@ -647,6 +647,7 @@
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 android:text="Give Up"
+                android:fontFamily="@font/lin_libertine_ri"
                 android:textColor="@color/text_color"
                 android:textSize="24dp" />
 

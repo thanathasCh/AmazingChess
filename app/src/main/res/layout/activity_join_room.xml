@@ -4,26 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_background"
+    android:background="@drawable/join_background"
     tools:context=".Menu.JoinRoomActivity">
 
     <EditText
         android:id="@+id/etCode"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
         android:layout_marginLeft="28dp"
-        android:layout_marginTop="116dp"
         android:layout_marginRight="28dp"
         android:background="@drawable/bg_edit_text"
         android:ems="8"
         android:gravity="center"
-        android:hint="Name Room"
-        android:inputType="textShortMessage|textPersonName"
+        android:hint="Enter Name Room"
+        android:fontFamily="@font/lin_libertine_ri"
+        android:inputType="textPersonName"
         android:textColor="@color/text_color"
-        android:textSize="28dp"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tvJoinTitle" />
 
     <EditText
         android:id="@+id/etPasswordJoinRoom"
@@ -35,10 +36,11 @@
         android:background="@drawable/bg_edit_text"
         android:ems="8"
         android:gravity="center"
-        android:hint="Passwod Room"
-        android:inputType="textShortMessage|textPersonName"
+        android:fontFamily="@font/lin_libertine_ri"
+        android:hint="Enter Password Room"
+        android:inputType="textPassword"
         android:textColor="@color/text_color"
-        android:textSize="28dp"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etCode" />
@@ -54,6 +56,7 @@
         android:text="Select Theme:"
         android:textColor="@color/text_color"
         android:textSize="24dp"
+        android:fontFamily="@font/lin_libertine_ri"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etPasswordJoinRoom" />
 
@@ -128,9 +131,22 @@
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 android:text="@string/join_button"
+                android:fontFamily="@font/lin_libertine_ri"
                 android:textColor="@color/text_color"
                 android:textSize="24dp" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvJoinTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="QUICK JOIN"
+        android:fontFamily="@font/wicked_mouse_agok"
+        android:textSize="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
