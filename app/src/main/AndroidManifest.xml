@@ -21,8 +21,8 @@
         <activity android:name=".Menu.CreateRoomActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Login.LoginActivity" />
-        <activity android:name=".SplashScreen.SplashScreenActivity"/>
-        <activity android:name=".Menu.MenuActivity" >
+        <activity android:name=".Menu.MenuActivity" />
+        <activity android:name=".SplashScreen.SplashScreenActivity" >
 
         <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
