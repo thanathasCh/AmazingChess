@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.androidmidterm.Menu.MenuActivity
 import com.example.androidmidterm.R
@@ -74,7 +75,8 @@ class RegisterActivity : AppCompatActivity() {
                     childUpdate["/$key"] = User
 
                     db.Users.updateChildren(childUpdate)
-                    //TODO James - after done registration
+                    Toast.makeText(this@RegisterActivity, "Register Successfully", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this@RegisterActivity, MenuActivity::class.java))
                 }
             }
 

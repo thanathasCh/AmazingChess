@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
             override fun onCancelled(p0: DatabaseError) { }
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                if (dataSnapshot.exists() && dataSnapshot.children.iterator().next().child("Password").value.toString().encrypt() == password) {
+                if (dataSnapshot.exists() && dataSnapshot.children.iterator().next().child("Password").value.toString() == password) {
                     startActivity(Intent(applicationContext, MenuActivity::class.java))
                 } else {
                     warningBox(this@LoginActivity, "Account not found!",

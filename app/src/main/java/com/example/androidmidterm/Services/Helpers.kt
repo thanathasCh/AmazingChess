@@ -2,6 +2,8 @@ package com.example.androidmidterm.Services
 
 import android.app.Activity
 import androidx.appcompat.app.AlertDialog
+import com.example.androidmidterm.ChessPieces.*
+import com.example.androidmidterm.ChessPieces.Pieces
 import com.example.androidmidterm.R
 
 var global_board = R.layout.activity_classic_board
@@ -12,35 +14,99 @@ fun String.encrypt() = toByteArray().toHexString()
 
 fun createBoardWhite(): Array<Array<out Pieces?>> =
     arrayOf(
-        arrayOf<Pieces?>(Pieces(2, 2), Pieces(3, 2), Pieces(4, 2), Pieces(6, 2), Pieces(5, 2), Pieces(4, 2), Pieces(3, 2), Pieces(2, 2)),
-        arrayOf<Pieces?>(Pieces(1, 2), Pieces(1, 2), Pieces(1, 2), Pieces(1, 2), Pieces(1, 2), Pieces(1, 2), Pieces(1, 2), Pieces(1, 2)),
+        arrayOf<Pieces?>(
+            Rook("BLACK"),
+            Knight("BLACK"),
+            Bishop("BLACK"),
+            King("BLACK"),
+            Queen("BLACK"),
+            Bishop("BLACK"),
+            Knight("BLACK"),
+            Rook("BLACK")
+        ),
+        arrayOf<Pieces?>(
+            Pawn("BLACK"),
+            Pawn("BLACK"),
+            Pawn("BLACK"),
+            Pawn("BLACK"),
+            Pawn("BLACK"),
+            Pawn("BLACK"),
+            Pawn("BLACK"),
+            Pawn("BLACK")
+        ),
         arrayOf<Pieces?>(null, null, null, null, null, null, null, null),
         arrayOf<Pieces?>(null, null, null, null, null, null, null, null),
         arrayOf<Pieces?>(null, null, null, null, null, null, null, null),
         arrayOf<Pieces?>(null, null, null, null, null, null, null, null),
-        arrayOf<Pieces?>(Pieces(1, 1), Pieces(1, 1), Pieces(1, 1), Pieces(1, 1), Pieces(1, 1), Pieces(1, 1), Pieces(1, 1), Pieces(1, 1)),
-        arrayOf(Pieces(2, 1), Pieces(3, 1), Pieces(4, 1), Pieces(5, 1), Pieces(6, 1), Pieces(4, 1), Pieces(3, 1), Pieces(2,1))
+        arrayOf<Pieces?>(
+            Pawn("WHITE"),
+            Pawn("WHITE"),
+            Pawn("WHITE"),
+            Pawn("WHITE"),
+            Pawn("WHITE"),
+            Pawn("WHITE"),
+            Pawn("WHITE"),
+            Pawn("WHITE")
+        ),
+        arrayOf(
+            Rook("WHITE"),
+            Knight("WHITE"),
+            Bishop("WHITE"),
+            Queen("WHITE"),
+            King("WHITE"),
+            Bishop("WHITE"),
+            Knight("WHITE"),
+            Rook("WHITE")
+        )
     )
 
 fun createBoardBlack(): Array<Array<out Pieces?>> =
     arrayOf(
-        arrayOf<Pieces?>(Pieces(2, 1), Pieces(3, 1), Pieces(4, 1), Pieces(6, 1), Pieces(5, 1), Pieces(4, 1), Pieces(3, 1), Pieces(2, 1)),
-        arrayOf<Pieces?>(Pieces(1, 1), Pieces(1, 1), Pieces(1, 1), Pieces(1, 1), Pieces(1, 1), Pieces(1, 1), Pieces(1, 1), Pieces(1, 1)),
+        arrayOf<Pieces?>(
+            Rook("WHITE"),
+            Knight("WHITE"),
+            Bishop("WHITE"),
+            King("WHITE"),
+            Queen("WHITE"),
+            Bishop("WHITE"),
+            Knight("WHITE"),
+            Rook("WHITE")
+        ),
+        arrayOf<Pieces?>(
+            Pawn("WHITE"),
+            Pawn("WHITE"),
+            Pawn("WHITE"),
+            Pawn("WHITE"),
+            Pawn("WHITE"),
+            Pawn("WHITE"),
+            Pawn("WHITE"),
+            Pawn("WHITE")
+        ),
         arrayOf<Pieces?>(null, null, null, null, null, null, null, null),
         arrayOf<Pieces?>(null, null, null, null, null, null, null, null),
         arrayOf<Pieces?>(null, null, null, null, null, null, null, null),
         arrayOf<Pieces?>(null, null, null, null, null, null, null, null),
-        arrayOf<Pieces?>(Pieces(1, 2), Pieces(1, 2), Pieces(1, 2), Pieces(1, 2), Pieces(1, 2), Pieces(1, 2), Pieces(1, 2), Pieces(1, 2)),
-        arrayOf(Pieces(2, 2), Pieces(3, 2), Pieces(4, 2), Pieces(5, 2), Pieces(6, 2), Pieces(4, 2), Pieces(3, 2), Pieces(2,2))
+        arrayOf<Pieces?>(
+            Pawn("BLACK"),
+            Pawn("BLACK"),
+            Pawn("BLACK"),
+            Pawn("BLACK"),
+            Pawn("BLACK"),
+            Pawn("BLACK"),
+            Pawn("BLACK"),
+            Pawn("BLACK")
+        ),
+        arrayOf(
+            Rook("BLACK"),
+            Knight("BLACK"),
+            Bishop("BLACK"),
+            Queen("BLACK"),
+            King("BLACK"),
+            Bishop("BLACK"),
+            Knight("BLACK"),
+            Rook("BLACK")
+        )
     )
-
-fun walk(Board: Array<Array<out Pieces?>>, x: Int, y: Int) {
-
-}
-
-fun endGame() {
-
-}
 
 fun warningBox(a: Activity, title: String, context: String) {
     val mAlertDialog = AlertDialog.Builder(a)
