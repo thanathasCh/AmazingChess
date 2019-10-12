@@ -8,11 +8,8 @@ import com.example.androidmidterm.*
 import com.example.androidmidterm.PlayBoard.BlueBoard
 import com.example.androidmidterm.PlayBoard.ClassicBoard
 import com.example.androidmidterm.PlayBoard.VmsBoard
+import com.example.androidmidterm.Services.*
 import kotlinx.android.synthetic.main.activity_join_room.*
-import com.example.androidmidterm.Services.DbContext
-import com.example.androidmidterm.Services.GameRoomModel
-import com.example.androidmidterm.Services.global_board
-import com.example.androidmidterm.Services.warningBox
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -52,7 +49,7 @@ class JoinRoomActivity : AppCompatActivity() {
                         else -> Intent(this@JoinRoomActivity, ClassicBoard::class.java)
                     }
                     intent.putExtra("gameRoomId", gameRoom.Id)
-                    intent.putExtra("STATUS", 1)
+                    global_playing_status = 1
                     startActivity(intent)
                 } else {
                     warningBox(this@JoinRoomActivity, "Room Not Found",

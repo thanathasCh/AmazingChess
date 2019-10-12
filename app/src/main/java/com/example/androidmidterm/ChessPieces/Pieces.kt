@@ -33,7 +33,7 @@ abstract class Pieces {
             else -> "UNKNOWN"
         }
         set(value) {
-            this.N_TYPE = when (value) {
+            this.N_COLOR = when (value) {
                 "WHITE" -> 1
                 "BLACK" -> 2
                 else -> 0

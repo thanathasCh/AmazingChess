@@ -1,5 +1,6 @@
 package com.example.androidmidterm.Services
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import androidx.appcompat.app.AlertDialog
 import com.example.androidmidterm.ChessPieces.*
@@ -8,9 +9,33 @@ import com.example.androidmidterm.R
 
 var global_board = R.layout.activity_classic_board
 
+var global_playing_status = 0
+
 fun ByteArray.toHexString() = joinToString("") {"%02x".format(it)}
 
 fun String.encrypt() = toByteArray().toHexString()
+
+fun Pieces.toResource(): Int {
+    if (COLOR == "BLACK") {
+        when (TYPE) {
+            "PAWN" -> return R.drawable.bp
+            "ROOK" -> return R.drawable.br
+            "KNIGHT" -> return R.drawable.bn
+            "BISHOP" -> return R.drawable.bb
+            "QUEEN" -> return R.drawable.bq
+            else -> return R.drawable.bk
+        }
+    } else {
+        when (TYPE) {
+            "PAWN" -> return R.drawable.wp
+            "ROOK" -> return R.drawable.wr
+            "KNIGHT" -> return R.drawable.wn
+            "BISHOP" -> return R.drawable.wb
+            "QUEEN" -> return R.drawable.wq
+            else -> return R.drawable.wk
+        }
+    }
+}
 
 fun createBoardWhite(): Array<Array<out Pieces?>> =
     arrayOf(
