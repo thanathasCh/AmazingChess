@@ -10,6 +10,6 @@ class Unknown : Pieces() {
         pos: Pair<Int, Int>,
         board: Array<Array<Pieces>>
     ): List<Pair<Int, Int>> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        TODO("not implemented")
     }
 }

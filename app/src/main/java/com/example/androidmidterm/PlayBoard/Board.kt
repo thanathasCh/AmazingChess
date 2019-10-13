@@ -1,18 +1,16 @@
 package com.example.androidmidterm.PlayBoard
 
 import androidx.appcompat.app.AppCompatActivity
-import com.example.androidmidterm.ChessPieces.Pawn
 import com.example.androidmidterm.ChessPieces.Pieces
 import com.example.androidmidterm.ChessPieces.Unknown
 import com.example.androidmidterm.Services.OP_COLOR
 import com.example.androidmidterm.Services.createBoardBlack
 import com.example.androidmidterm.Services.createBoardWhite
-import com.example.androidmidterm.Services.global_playing_status
-import java.util.jar.Manifest
+import com.example.androidmidterm.Services.global_player_status
 
 open class Board : AppCompatActivity() {
 
-    var MainBoard: Array<Array<Pieces>> = when (global_playing_status) {
+    var MainBoard: Array<Array<Pieces>> = when (global_player_status) {
         0 -> createBoardBlack()
         else -> createBoardWhite()
     }

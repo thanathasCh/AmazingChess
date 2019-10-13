@@ -3,7 +3,6 @@ package com.example.androidmidterm.Menu
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import com.example.androidmidterm.*
 import com.example.androidmidterm.PlayBoard.BlueBoard
 import com.example.androidmidterm.PlayBoard.ClassicBoard
@@ -61,7 +60,7 @@ class JoinRoomActivity : AppCompatActivity() {
                         else -> Intent(this@JoinRoomActivity, ClassicBoard::class.java)
                     }
                     intent.putExtra("MATCH_ID", gameRoom.Id)
-                    global_playing_status = 1
+                    global_player_status = 1
                     startActivity(intent)
                 } else {
                     warningBox(this@JoinRoomActivity, "Room Not Found",

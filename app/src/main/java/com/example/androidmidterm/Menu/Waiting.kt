@@ -10,7 +10,7 @@ import com.example.androidmidterm.Services.DbContext
 import com.example.androidmidterm.Services.GameRoomModel
 import com.example.androidmidterm.Services.global_board
 import com.example.androidmidterm.PlayBoard.VmsBoard
-import com.example.androidmidterm.Services.global_playing_status
+import com.example.androidmidterm.Services.global_player_status
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -41,7 +41,7 @@ class Waiting : AppCompatActivity() {
                         else -> Intent(this@Waiting, ClassicBoard::class.java)
                     }
                     intent.putExtra("MATCH_ID", intent.getStringExtra("MATCH_ID"))
-                    global_playing_status = 0
+                    global_player_status = 0
                     startActivity(intent)
                 }
             }

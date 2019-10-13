@@ -1,8 +1,6 @@
 package com.example.androidmidterm.Services
 
-import android.annotation.SuppressLint
 import android.app.Activity
-import android.media.Image
 import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
@@ -14,15 +12,15 @@ fun isSubBoard(pos: Pair<Int, Int>) = ((pos.first % 2 == 0) == (pos.second % 2 =
 
 var global_board = R.layout.activity_classic_board
 
-var global_playing_status = 1
+var global_player_status = 1
 
 fun ByteArray.toHexString() = joinToString("") {"%02x".format(it)}
 
 fun String.encrypt() = toByteArray().toHexString()
 
-val MY_COLOR = (if (global_playing_status == 0) "BLACK" else "WHITE")
+val MY_COLOR = (if (global_player_status == 0) "BLACK" else "WHITE")
 
-val OP_COLOR = (if (global_playing_status == 0) "WHITE" else "BLACK")
+val OP_COLOR = (if (global_player_status == 0) "WHITE" else "BLACK")
 
 fun Pieces.toResource(): Int {
     if (COLOR == "BLACK") {
