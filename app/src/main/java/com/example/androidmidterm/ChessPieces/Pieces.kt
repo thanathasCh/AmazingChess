@@ -50,5 +50,5 @@ abstract class Pieces {
         this.N_COLOR = color
     }
 
-    abstract fun possibleMove(x: Int, y: Int): List<Pair<Int, Int>>
+    abstract fun possibleMove(pos: Pair<Int, Int>, board: Array<Array<Pieces>>): List<Pair<Int, Int>>
 }

@@ -33,7 +33,7 @@
             android:layout_height="50dp"
             android:scaleType="fitXY"
             android:background="@drawable/bg_blue_sub_board"
-            android:src="@drawable/wr">
+            android:onClick="btnClicked">
         </ImageView>
         <ImageView
             android:id="@+id/a2"
@@ -41,7 +41,7 @@
             android:layout_height="50dp"
             android:scaleType="fitXY"
             android:background="@drawable/bg_blue_main_board"
-            android:src="@drawable/wn">
+            android:onClick="btnClicked">
         </ImageView>
         <ImageView
             android:id="@+id/a3"
@@ -49,7 +49,7 @@
             android:layout_height="50dp"
             android:scaleType="fitXY"
             android:background="@drawable/bg_blue_sub_board"
-            android:src="@drawable/wb">
+            android:onClick="btnClicked">
         </ImageView>
         <ImageView
             android:id="@+id/a4"
@@ -57,7 +57,7 @@
             android:layout_height="50dp"
             android:scaleType="fitXY"
             android:background="@drawable/bg_blue_main_board"
-            android:src="@drawable/wq">
+            android:onClick="btnClicked">
         </ImageView>
         <ImageView
             android:id="@+id/a5"
@@ -65,7 +65,7 @@
             android:layout_height="50dp"
             android:scaleType="fitXY"
             android:background="@drawable/bg_blue_sub_board"
-            android:src="@drawable/wk">
+            android:onClick="btnClicked">
         </ImageView>
         <ImageView
             android:id="@+id/a6"
@@ -73,7 +73,7 @@
             android:layout_height="50dp"
             android:scaleType="fitXY"
             android:background="@drawable/bg_blue_main_board"
-            android:src="@drawable/wb">
+            android:onClick="btnClicked">
         </ImageView>
         <ImageView
             android:id="@+id/a7"
@@ -81,7 +81,7 @@
             android:layout_height="50dp"
             android:scaleType="fitXY"
             android:background="@drawable/bg_blue_sub_board"
-            android:src="@drawable/wn">
+            android:onClick="btnClicked">
         </ImageView>
         <ImageView
             android:id="@+id/a8"
@@ -89,7 +89,7 @@
             android:layout_height="50dp"
             android:scaleType="fitXY"
             android:background="@drawable/bg_blue_main_board"
-            android:src="@drawable/wr">
+            android:onClick="btnClicked">
         </ImageView>
     </LinearLayout>
 
@@ -112,7 +112,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_main_board"
-                android:src="@drawable/wp">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/b2"
@@ -120,7 +120,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_sub_board"
-                android:src="@drawable/wp">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/b3"
@@ -128,7 +128,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_main_board"
-                android:src="@drawable/wp">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/b4"
@@ -136,7 +136,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_sub_board"
-                android:src="@drawable/wp">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/b5"
@@ -144,7 +144,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_main_board"
-                android:src="@drawable/wp">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/b6"
@@ -152,7 +152,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_sub_board"
-                android:src="@drawable/wp">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/b7"
@@ -160,7 +160,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_main_board"
-                android:src="@drawable/wp">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/b8"
@@ -168,7 +168,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_sub_board"
-                android:src="@drawable/wp">
+                android:onClick="btnClicked">
             </ImageView>
         </LinearLayout>
     </LinearLayout>
@@ -191,6 +191,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_sub_board">
             </ImageView>
             <ImageView
@@ -198,6 +199,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_main_board">
             </ImageView>
             <ImageView
@@ -205,6 +207,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_sub_board">
             </ImageView>
             <ImageView
@@ -212,6 +215,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_main_board">
             </ImageView>
             <ImageView
@@ -219,6 +223,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_sub_board">
             </ImageView>
             <ImageView
@@ -226,6 +231,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_main_board">
             </ImageView>
             <ImageView
@@ -233,6 +239,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_sub_board">
             </ImageView>
             <ImageView
@@ -240,6 +247,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_main_board">
             </ImageView>
         </LinearLayout>
@@ -263,6 +271,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_main_board">
             </ImageView>
             <ImageView
@@ -270,6 +279,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_sub_board">
             </ImageView>
             <ImageView
@@ -277,6 +287,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_main_board">
             </ImageView>
             <ImageView
@@ -284,6 +295,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_sub_board">
             </ImageView>
             <ImageView
@@ -291,6 +303,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_main_board">
             </ImageView>
             <ImageView
@@ -298,6 +311,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_sub_board">
             </ImageView>
             <ImageView
@@ -305,6 +319,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_main_board">
             </ImageView>
 
@@ -313,7 +328,9 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@drawable/bg_blue_sub_board"
-                android:scaleType="fitXY"></ImageView>
+                android:onClick="btnClicked"
+                android:scaleType="fitXY">
+            </ImageView>
         </LinearLayout>
     </LinearLayout>
 
@@ -335,6 +352,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_sub_board">
             </ImageView>
             <ImageView
@@ -342,6 +360,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_main_board">
             </ImageView>
             <ImageView
@@ -349,6 +368,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_sub_board">
             </ImageView>
             <ImageView
@@ -356,6 +376,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_main_board">
             </ImageView>
             <ImageView
@@ -363,6 +384,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_sub_board">
             </ImageView>
             <ImageView
@@ -370,12 +392,14 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_main_board">
             </ImageView>
             <ImageView
                 android:id="@+id/e7"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:onClick="btnClicked"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_sub_board">
             </ImageView>
@@ -383,6 +407,7 @@
                 android:id="@+id/e8"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:onClick="btnClicked"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_main_board">
             </ImageView>
@@ -405,6 +430,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_main_board">
             </ImageView>
             <ImageView
@@ -412,6 +438,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_sub_board">
             </ImageView>
             <ImageView
@@ -419,6 +446,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_main_board">
             </ImageView>
             <ImageView
@@ -426,6 +454,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_sub_board">
             </ImageView>
             <ImageView
@@ -433,6 +462,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_main_board">
             </ImageView>
             <ImageView
@@ -440,6 +470,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_sub_board">
             </ImageView>
             <ImageView
@@ -447,6 +478,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_main_board">
             </ImageView>
             <ImageView
@@ -454,6 +486,7 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
+                android:onClick="btnClicked"
                 android:background="@drawable/bg_blue_sub_board">
             </ImageView>
         </LinearLayout>
@@ -476,7 +509,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_sub_board"
-                android:src="@drawable/bp">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/g2"
@@ -484,7 +517,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_main_board"
-                android:src="@drawable/bp">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/g3"
@@ -492,7 +525,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_sub_board"
-                android:src="@drawable/bp">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/g4"
@@ -500,7 +533,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_main_board"
-                android:src="@drawable/bp">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/g5"
@@ -508,7 +541,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_sub_board"
-                android:src="@drawable/bp">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/g6"
@@ -516,7 +549,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_main_board"
-                android:src="@drawable/bp">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/g7"
@@ -524,7 +557,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_sub_board"
-                android:src="@drawable/bp">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/g8"
@@ -532,7 +565,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_main_board"
-                android:src="@drawable/bp">
+                android:onClick="btnClicked">
             </ImageView>
         </LinearLayout>
     </LinearLayout>
@@ -556,7 +589,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_main_board"
-                android:src="@drawable/br">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/h2"
@@ -564,7 +597,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_sub_board"
-                android:src="@drawable/bn">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/h3"
@@ -572,7 +605,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_main_board"
-                android:src="@drawable/bb">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/h4"
@@ -580,7 +613,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_sub_board"
-                android:src="@drawable/bq">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/h5"
@@ -588,7 +621,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_main_board"
-                android:src="@drawable/bk">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/h6"
@@ -596,7 +629,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_sub_board"
-                android:src="@drawable/bb">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/h7"
@@ -604,7 +637,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_main_board"
-                android:src="@drawable/bn">
+                android:onClick="btnClicked">
             </ImageView>
             <ImageView
                 android:id="@+id/h8"
@@ -612,7 +645,7 @@
                 android:layout_height="50dp"
                 android:scaleType="fitXY"
                 android:background="@drawable/bg_blue_sub_board"
-                android:src="@drawable/br">
+                android:onClick="btnClicked">
             </ImageView>
         </LinearLayout>
     </LinearLayout>

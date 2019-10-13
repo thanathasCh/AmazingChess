@@ -13,21 +13,16 @@
         android:theme="@style/AppTheme">
         <activity android:name=".PlayBoard.BlueBoard"></activity>
         <activity android:name=".PlayBoard.VmsBoard"></activity>
-<!--        <activity android:name=".PlayBoard.ClassicBoard"></activity>-->
+        <activity android:name=".PlayBoard.ClassicBoard"></activity>
         <activity android:name=".Menu.Waiting"></activity>
         <activity android:name=".Register.RegisterActivity" />
         <activity android:name=".Menu.Ranking.RankingActivity" />
         <activity android:name=".Menu.JoinRoomActivity" />
         <activity android:name=".Menu.CreateRoomActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".PlayBoard.ClassicBoard" />
         <activity android:name=".Menu.MenuActivity" />
         <activity android:name=".Login.LoginActivity" />
         <activity android:name=".SplashScreen.SplashScreenActivity" >
-
-
-
-
         <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
 

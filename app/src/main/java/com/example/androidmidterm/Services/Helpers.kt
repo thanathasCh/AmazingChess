@@ -2,18 +2,27 @@ package com.example.androidmidterm.Services
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.media.Image
+import android.view.View
+import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import com.example.androidmidterm.ChessPieces.*
 import com.example.androidmidterm.ChessPieces.Pieces
 import com.example.androidmidterm.R
 
+fun isSubBoard(pos: Pair<Int, Int>) = ((pos.first % 2 == 0) == (pos.second % 2 == 0))
+
 var global_board = R.layout.activity_classic_board
 
-var global_playing_status = 0
+var global_playing_status = 1
 
 fun ByteArray.toHexString() = joinToString("") {"%02x".format(it)}
 
 fun String.encrypt() = toByteArray().toHexString()
+
+val MY_COLOR = (if (global_playing_status == 0) "BLACK" else "WHITE")
+
+val OP_COLOR = (if (global_playing_status == 0) "WHITE" else "BLACK")
 
 fun Pieces.toResource(): Int {
     if (COLOR == "BLACK") {
@@ -37,9 +46,9 @@ fun Pieces.toResource(): Int {
     }
 }
 
-fun createBoardWhite(): Array<Array<out Pieces?>> =
+fun createBoardWhite(): Array<Array<Pieces>> =
     arrayOf(
-        arrayOf<Pieces?>(
+        arrayOf(
             Rook("BLACK"),
             Knight("BLACK"),
             Bishop("BLACK"),
@@ -49,7 +58,7 @@ fun createBoardWhite(): Array<Array<out Pieces?>> =
             Knight("BLACK"),
             Rook("BLACK")
         ),
-        arrayOf<Pieces?>(
+        arrayOf<Pieces>(
             Pawn("BLACK"),
             Pawn("BLACK"),
             Pawn("BLACK"),
@@ -59,11 +68,11 @@ fun createBoardWhite(): Array<Array<out Pieces?>> =
             Pawn("BLACK"),
             Pawn("BLACK")
         ),
-        arrayOf<Pieces?>(null, null, null, null, null, null, null, null),
-        arrayOf<Pieces?>(null, null, null, null, null, null, null, null),
-        arrayOf<Pieces?>(null, null, null, null, null, null, null, null),
-        arrayOf<Pieces?>(null, null, null, null, null, null, null, null),
-        arrayOf<Pieces?>(
+        arrayOf<Pieces>(Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown()),
+        arrayOf<Pieces>(Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown()),
+        arrayOf<Pieces>(Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown()),
+        arrayOf<Pieces>(Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown()),
+        arrayOf<Pieces>(
             Pawn("WHITE"),
             Pawn("WHITE"),
             Pawn("WHITE"),
@@ -85,9 +94,9 @@ fun createBoardWhite(): Array<Array<out Pieces?>> =
         )
     )
 
-fun createBoardBlack(): Array<Array<out Pieces?>> =
+fun createBoardBlack(): Array<Array<Pieces>> =
     arrayOf(
-        arrayOf<Pieces?>(
+        arrayOf(
             Rook("WHITE"),
             Knight("WHITE"),
             Bishop("WHITE"),
@@ -97,7 +106,7 @@ fun createBoardBlack(): Array<Array<out Pieces?>> =
             Knight("WHITE"),
             Rook("WHITE")
         ),
-        arrayOf<Pieces?>(
+        arrayOf<Pieces>(
             Pawn("WHITE"),
             Pawn("WHITE"),
             Pawn("WHITE"),
@@ -107,11 +116,11 @@ fun createBoardBlack(): Array<Array<out Pieces?>> =
             Pawn("WHITE"),
             Pawn("WHITE")
         ),
-        arrayOf<Pieces?>(null, null, null, null, null, null, null, null),
-        arrayOf<Pieces?>(null, null, null, null, null, null, null, null),
-        arrayOf<Pieces?>(null, null, null, null, null, null, null, null),
-        arrayOf<Pieces?>(null, null, null, null, null, null, null, null),
-        arrayOf<Pieces?>(
+        arrayOf<Pieces>(Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown()),
+        arrayOf<Pieces>(Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown()),
+        arrayOf<Pieces>(Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown()),
+        arrayOf<Pieces>(Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown()),
+        arrayOf<Pieces>(
             Pawn("BLACK"),
             Pawn("BLACK"),
             Pawn("BLACK"),
@@ -144,3 +153,24 @@ fun warningBox(a: Activity, title: String, context: String) {
     }
     mAlertDialog.show()
 }
+
+val PAWN = arrayOf(R.drawable.bp, R.drawable.wp)
+val BISHOP = arrayOf(R.drawable.bb, R.drawable.wb)
+val ROOK = arrayOf(R.drawable.br, R.drawable.wr)
+val KNIGHT = arrayOf(R.drawable.bn, R.drawable.wn)
+val QUEEN = arrayOf(R.drawable.bq, R.drawable.wq)
+val KING = arrayOf(R.drawable.bk, R.drawable.wk)
+
+fun Array<Array<ImageView>>.indexOf2D(view: View): Pair<Int, Int> {
+    for (x in indices) {
+        for (y in this[x].indices) {
+            if (this[x][y].id == view.id) {
+                return Pair(x, y)
+            }
+        }
+    }
+
+    return Pair(-1, -1)
+}
+
+fun Pair<Int, Int>.isExceedBoard() = !(this.first in 0..7 && this.second in 0..7)

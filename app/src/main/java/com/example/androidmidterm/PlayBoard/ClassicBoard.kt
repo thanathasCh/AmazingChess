@@ -1,18 +1,49 @@
 package com.example.androidmidterm.PlayBoard
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.ImageView
-import com.example.androidmidterm.ChessPieces.Pieces
 import com.example.androidmidterm.R
+import com.example.androidmidterm.Services.MY_COLOR
+import com.example.androidmidterm.Services.indexOf2D
+import com.example.androidmidterm.Services.isSubBoard
 import com.example.androidmidterm.Services.toResource
 import kotlinx.android.synthetic.main.activity_classic_board.*
 
 class ClassicBoard : Board() {
     private lateinit var boardLocation: Array<Array<ImageView>>
+    private val MAIN = R.drawable.bg_classic_main_board
+    private val SUB = R.drawable.bg_classic_sub_board
     val Board = super.MainBoard
+    var isRed = false
+    var redList = listOf<Pair<Int, Int>>()
+    var pos = Pair(-1, -1)
+
+    fun btnClicked(view: View) {
+        val pair = boardLocation.indexOf2D(view)
+        if (!isRed) {
+            val possibleMove = Board[pair.first][pair.second].possibleMove(pair, Board)
+            for (i in possibleMove) {
+                boardLocation[i.first][i.second].setBackgroundResource(R.drawable.bg_target)
+                boardLocation[i.first][i.second].isClickable = true
+            }
+
+            if (possibleMove.isNotEmpty()) {
+                isRed = true
+                redList = possibleMove
+            }
+            pos = pair
+        } else {
+            if (redList.contains(pair)) {
+                super.move(pos, pair)
+                updateBoardUI()
+            }
+            for (i in redList) {
+                boardLocation[i.first][i.second].setBackgroundResource(if(isSubBoard(i)) SUB else MAIN)
+            }
+            isRed = false
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,38 +59,27 @@ class ClassicBoard : Board() {
             arrayOf(g1, g2, g3, g4, g5, g6, g7, g8),
             arrayOf(h1, h2, h3, h4, h5, h6, h7, h8))
         updateBoardUI()
-
-
-        val btnClicked = View.OnClickListener {
-            
-        }
     }
 
     private fun updateBoardUI() {
         for(x in 0..7) {
             for (y in 0..7) {
-                if (Board[x][y] != null) {
-                    boardLocation[x][y].setImageResource(Board[x][y]!!.toResource())
-                    boardLocation[x][y].isClickable = true
+                if (Board[x][y].TYPE != "UNKNOWN") {
+                    boardLocation[x][y].setImageResource(Board[x][y].toResource())
+                    boardLocation[x][y].isClickable = Board[x][y].COLOR == MY_COLOR
                 } else {
+                    boardLocation[x][y].setImageResource(0)
                     boardLocation[x][y].isClickable = false
                 }
             }
         }
     }
 
-    /*
-    View.OnClickListener myOnlyhandler = new View.OnClickListener() {
-  public void onClick(View v) {
-      switch(v.getId()) {
-        case R.id.b1:
-          // it was the first button
-          break;
-        case R.id.b2:
-          // it was the second button
-          break;
-      }
-  }
-}
-     */
+    private fun disabledBtn() {
+        for ( i in boardLocation) {
+            for ( j in i) {
+                j.isClickable = false
+            }
+        }
+    }
 }

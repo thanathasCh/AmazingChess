@@ -22,6 +22,18 @@ class JoinRoomActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_join_room)
 
+        rbClassicBoard.setOnClickListener {
+            global_board = R.layout.activity_classic_board
+        }
+
+        rbBlueBoard.setOnClickListener {
+            global_board = R.layout.activity_blue_board
+        }
+
+        rbVMSBoard.setOnClickListener {
+            global_board = R.layout.activity_vms_board
+        }
+
         tvJoin.setOnClickListener {
             joinRoom(etCode.text.toString())
         }
@@ -48,7 +60,7 @@ class JoinRoomActivity : AppCompatActivity() {
                         R.layout.activity_vms_board -> Intent(this@JoinRoomActivity, VmsBoard::class.java)
                         else -> Intent(this@JoinRoomActivity, ClassicBoard::class.java)
                     }
-                    intent.putExtra("gameRoomId", gameRoom.Id)
+                    intent.putExtra("MATCH_ID", gameRoom.Id)
                     global_playing_status = 1
                     startActivity(intent)
                 } else {
