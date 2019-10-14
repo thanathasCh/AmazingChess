@@ -144,7 +144,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:text="QUICK JOIN"
-        android:fontFamily="@font/wicked_mouse_agok"
+        android:fontFamily="@font/pineappl_demo_3o_gz"
         android:textSize="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
