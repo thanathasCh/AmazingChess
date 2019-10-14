@@ -70,7 +70,7 @@ class ClassicBoard : Board() {
                 val move = dataSnapshot.getValue().toString()
                 var move_list = move.split(",")
 
-                if (!my_turn) {
+                if (my_turn) {
                     YOUR_TURN(this@ClassicBoard)
                 } else {
                     move_list = flip(move_list)
@@ -103,7 +103,6 @@ class ClassicBoard : Board() {
         }
 
         tvGiveUp.setOnClickListener {
-            //TODO Are you sure?
             val op_king = Board.indexOf2D(King(OP_COLOR()))
             val my_king = Board.indexOf2D(King(MY_COLOR()))
 
@@ -129,11 +128,11 @@ class ClassicBoard : Board() {
         if (!Board.containsPieces(King(MY_COLOR()))) {
             updateScore(-10)
             warningBox(this, "YOU LOST!", "You lost, go back to main menu")
-            startActivity(Intent(this, MenuActivity::class.java))
+            onDestroy()
         } else if (!Board.containsPieces(King(OP_COLOR()))) {
             updateScore(10)
             warningBox(this, "YOU WIN!", "You WIN, go back to main menu")
-            startActivity(Intent(this, MenuActivity::class.java))
+            onDestroy()
         }
     }
 

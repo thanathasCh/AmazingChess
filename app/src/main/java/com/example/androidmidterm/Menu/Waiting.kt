@@ -22,7 +22,8 @@ class Waiting : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_waiting)
-        //                Key.text = gameRoom?.Name and password
+        Key.text = intent.getStringExtra("GameRoomName")
+        keyPassword.text = intent.getStringExtra("GameRoomPass")
         val data = db.GameRooms.child(GAME_ID)
 
         data.addChildEventListener(object : ChildEventListener {

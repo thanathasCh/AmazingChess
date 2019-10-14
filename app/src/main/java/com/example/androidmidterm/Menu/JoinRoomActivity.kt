@@ -44,7 +44,7 @@ class JoinRoomActivity : AppCompatActivity() {
             override fun onCancelled(p0: DatabaseError) { }
 
             override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.exists()) {
+                if (snapshot.exists() && snapshot.children.iterator().next().child("Password").value.toString() == etPasswordJoinRoom.text.toString()) {
                     val gameRoom = GameRoomModel()
 
                     snapshot.children.forEach {
@@ -65,7 +65,7 @@ class JoinRoomActivity : AppCompatActivity() {
                     startActivity(intent)
                 } else {
                     warningBox(this@JoinRoomActivity, "Room Not Found",
-                        "Please check your room name again.")
+                        "Please check your room name and password again.")
                 }
             }
         })

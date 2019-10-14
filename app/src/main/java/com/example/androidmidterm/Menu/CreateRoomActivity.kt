@@ -40,7 +40,8 @@ class CreateRoomActivity : AppCompatActivity() {
         val GameRoom = GameRoomModel(
             Id = key!!,
             Name = roomName,
-            StatusByte = 1
+            StatusByte = 1,
+            Password = etPasswordRoom.text.toString().encrypt()
         ).toMap()
 
         val childUpdate = HashMap<String, Any>()
@@ -50,8 +51,8 @@ class CreateRoomActivity : AppCompatActivity() {
 
         val intent = Intent(this, Waiting::class.java)
         GAME_ID = key
+        intent.putExtra("GameRoomPass", etPasswordRoom.text.toString())
+        intent.putExtra("GameRoomName", etNameRoom.text.toString())
         startActivity(intent)
-
-        //TODO PASSWORD
     }
 }
