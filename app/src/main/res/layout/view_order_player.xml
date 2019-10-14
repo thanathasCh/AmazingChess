@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/llPlayer1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_player"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/llPlayer2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvNamePlayer1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/lin_libertine_ri"
+            android:text="Name Player1"
+            android:textColor="@color/text_color"
+            android:textSize="48dp" />
+
+        <TextView
+            android:id="@+id/NumberPlayer1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:fontFamily="@font/lin_libertine_ri"
+            android:text="Player 1"
+            android:textColor="@color/text_color"
+            android:textSize="48dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llPlayer2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        android:background="@color/sub_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/llPlayer1"
+        app:layout_constraintTop_toTopOf="@+id/llPlayer1">
+
+        <TextView
+            android:id="@+id/tvNamePlayer2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:fontFamily="@font/lin_libertine_ri"
+            android:textColor="@color/text_color"
+            android:text="Name Player2"
+            android:textSize="48dp" />
+
+        <TextView
+            android:id="@+id/NumberPlayer2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/lin_libertine_ri"
+            android:gravity="center"
+            android:textColor="@color/text_color"
+            android:text="Player 2"
+            android:textSize="48dp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

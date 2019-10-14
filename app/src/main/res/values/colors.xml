@@ -20,8 +20,14 @@
     <color name="sub_chess_board3">#F4EFA4</color>
     <color name="edit_text_background">#6BB1B0B0</color>
 
+    <color name="player">#97B9E9</color>
+
+    <color name="ranking">#F7ADC0</color>
+    <color name="list">#9C81E2</color>
+
     <color name="solid">#DFD8EC</color>
     <color name="alpha">#00FFFFFF</color>
-    <color name="red_target">#B33A3A</color>
+
+    <color name="target">#ECC593</color>
 
 </resources>

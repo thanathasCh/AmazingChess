@@ -12,7 +12,7 @@
         android:layout_width="307dp"
         android:layout_height="335dp"
         android:layout_marginTop="100dp"
-        android:src="@drawable/p_fair"
+        android:src="@drawable/new_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"

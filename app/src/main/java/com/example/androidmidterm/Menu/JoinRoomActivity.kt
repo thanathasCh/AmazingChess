@@ -1,6 +1,7 @@
 package com.example.androidmidterm.Menu
 
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.androidmidterm.*
@@ -12,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_join_room.*
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.activity_menu.*
 
 class JoinRoomActivity : AppCompatActivity() {
 
@@ -41,7 +43,7 @@ class JoinRoomActivity : AppCompatActivity() {
     fun joinRoom(roomName: String) {
         val data = db.GameRooms.orderByChild("Name").equalTo(roomName)
         data.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onCancelled(p0: DatabaseError) { }
+            override fun onCancelled(p0: DatabaseError) {}
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
@@ -53,18 +55,29 @@ class JoinRoomActivity : AppCompatActivity() {
                         gameRoom.StatusByte = it.child("StatusByte").value.toString().toInt()
                     }
                     db.GameRooms.child(gameRoom.Id).child("StatusByte").setValue(2)
-                    val intent = when(global_board) {
-                        R.layout.activity_classic_board -> Intent(this@JoinRoomActivity, ClassicBoard::class.java)
-                        R.layout.activity_blue_board -> Intent(this@JoinRoomActivity, BlueBoard::class.java)
-                        R.layout.activity_vms_board -> Intent(this@JoinRoomActivity, VmsBoard::class.java)
+                    val intent = when (global_board) {
+                        R.layout.activity_classic_board -> Intent(
+                            this@JoinRoomActivity,
+                            ClassicBoard::class.java
+                        )
+                        R.layout.activity_blue_board -> Intent(
+                            this@JoinRoomActivity,
+                            BlueBoard::class.java
+                        )
+                        R.layout.activity_vms_board -> Intent(
+                            this@JoinRoomActivity,
+                            VmsBoard::class.java
+                        )
                         else -> Intent(this@JoinRoomActivity, ClassicBoard::class.java)
                     }
                     intent.putExtra("MATCH_ID", gameRoom.Id)
                     global_player_status = 1
                     startActivity(intent)
                 } else {
-                    warningBox(this@JoinRoomActivity, "Room Not Found",
-                        "Please check your room name again.")
+                    warningBox(
+                        this@JoinRoomActivity, "Room Not Found",
+                        "Please check your room name again."
+                    )
                 }
             }
         })

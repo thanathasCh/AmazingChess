@@ -2,9 +2,11 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
 
-    <solid android:color="@color/target"></solid>
+    <solid android:color="@color/ranking"></solid>
 
-    <corners android:radius="0pt"/>
+    <corners
+        android:topLeftRadius="10pt"
+        android:bottomLeftRadius="10pt"/>
 
     <padding
         android:bottom="10dp"
