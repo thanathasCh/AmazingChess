@@ -3,24 +3,63 @@ package com.example.androidmidterm.Services
 import android.app.Activity
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.androidmidterm.ChessPieces.*
 import com.example.androidmidterm.ChessPieces.Pieces
+import com.example.androidmidterm.Menu.Waiting
 import com.example.androidmidterm.R
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 
 fun isSubBoard(pos: Pair<Int, Int>) = ((pos.first % 2 == 0) == (pos.second % 2 == 0))
 
+var USER_ID = ""
+
+var GAME_ID = ""
+
 var global_board = R.layout.activity_classic_board
 
-var global_player_status = 1
+var global_player_status = 0
 
-fun ByteArray.toHexString() = joinToString("") {"%02x".format(it)}
+var my_turn = false
+
+fun ByteArray.toHexString() = joinToString("") { "%02x".format(it) }
 
 fun String.encrypt() = toByteArray().toHexString()
 
-val MY_COLOR = (if (global_player_status == 0) "BLACK" else "WHITE")
+fun MY_COLOR(): String {
+    if (global_player_status == 0) {
+        return "BLACK"
+    } else {
+        return "WHITE"
+    }
+}
 
-val OP_COLOR = (if (global_player_status == 0) "WHITE" else "BLACK")
+fun OP_COLOR(): String {
+    if (global_player_status == 0) {
+        return "WHITE"
+    } else {
+        return "BLACK"
+    }
+}
+
+fun MY_MOVE(): String {
+    if (global_player_status == 0) {
+        return "Move1"
+    } else {
+        return "Move2"
+    }
+}
+
+fun OP_MOVE(): String {
+    if (global_player_status == 0) {
+        return "Move2"
+    } else {
+        return "Move1"
+    }
+}
 
 fun Pieces.toResource(): Int {
     if (COLOR == "BLACK") {
@@ -66,10 +105,46 @@ fun createBoardWhite(): Array<Array<Pieces>> =
             Pawn("BLACK"),
             Pawn("BLACK")
         ),
-        arrayOf<Pieces>(Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown()),
-        arrayOf<Pieces>(Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown()),
-        arrayOf<Pieces>(Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown()),
-        arrayOf<Pieces>(Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown()),
+        arrayOf<Pieces>(
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown()
+        ),
+        arrayOf<Pieces>(
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown()
+        ),
+        arrayOf<Pieces>(
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown()
+        ),
+        arrayOf<Pieces>(
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown()
+        ),
         arrayOf<Pieces>(
             Pawn("WHITE"),
             Pawn("WHITE"),
@@ -114,10 +189,46 @@ fun createBoardBlack(): Array<Array<Pieces>> =
             Pawn("WHITE"),
             Pawn("WHITE")
         ),
-        arrayOf<Pieces>(Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown()),
-        arrayOf<Pieces>(Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown()),
-        arrayOf<Pieces>(Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown()),
-        arrayOf<Pieces>(Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown(), Unknown()),
+        arrayOf<Pieces>(
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown()
+        ),
+        arrayOf<Pieces>(
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown()
+        ),
+        arrayOf<Pieces>(
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown()
+        ),
+        arrayOf<Pieces>(
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown(),
+            Unknown()
+        ),
         arrayOf<Pieces>(
             Pawn("BLACK"),
             Pawn("BLACK"),
@@ -171,4 +282,57 @@ fun Array<Array<ImageView>>.indexOf2D(view: View): Pair<Int, Int> {
     return Pair(-1, -1)
 }
 
+fun Array<Array<Pieces>>.indexOf2D(p: Pieces): Pair<Int, Int> {
+    for (x in indices) {
+        for (y in this[x].indices) {
+            if (this[x][y].TYPE == p.TYPE && this[x][y].COLOR == p.COLOR) {
+                return Pair(x, y)
+            }
+        }
+    }
+
+    return Pair(-1, -1)
+}
+
+fun Array<Array<Pieces>>.containsPieces(p: Pieces): Boolean {
+    val pair = indexOf2D(p)
+
+    return (pair.first >= 0 && pair.second >= 0)
+}
+
 fun Pair<Int, Int>.isExceedBoard() = !(this.first in 0..7 && this.second in 0..7)
+
+fun NOT_YOUR_TURN(a: Activity) {
+    Toast.makeText(a, "This is not your turn!!", Toast.LENGTH_SHORT).show()
+}
+
+fun YOUR_TURN(a: Activity) {
+    Toast.makeText(a, "Your turn!!", Toast.LENGTH_SHORT).show()
+}
+
+fun OP_TURN(a: Activity) {
+    Toast.makeText(a, "Opponent's turn!!", Toast.LENGTH_SHORT).show()
+}
+
+fun updateScore(p: Int) {
+    val db = DbContext()
+//    val data = db.child(USER_ID)
+    val data = db.Users.child(USER_ID)
+    data.addListenerForSingleValueEvent(object : ValueEventListener {
+        override fun onCancelled(p0: DatabaseError) {}
+
+        override fun onDataChange(p0: DataSnapshot) {
+            val n = p0.getValue(UserModel::class.java)!!.Score
+
+            db.Users.child(USER_ID).child("Score").setValue(n.plus(p))
+        }
+
+    })
+}
+
+fun flip(old: List<String>): List<String> {
+    return listOf(
+        (7 - old[0].toInt()).toString(), (7 - old[1].toInt()).toString(),
+        (7 - old[2].toInt()).toString(), (7 - old[3].toInt()).toString()
+    )
+}

@@ -36,31 +36,22 @@ class CreateRoomActivity : AppCompatActivity() {
 
     fun createGameRoom(roomName: String) {
         val key = db.GameRooms.push().key
-        val match_key = db.Matches.push().key
-
-        val Match = Match(
-            GameRoomId = key!!,
-            Move = Move()
-        ).toMap()
 
         val GameRoom = GameRoomModel(
-            Id = key,
+            Id = key!!,
             Name = roomName,
             StatusByte = 1
         ).toMap()
 
         val childUpdate = HashMap<String, Any>()
-        val childMatch = HashMap<String, Any>()
 
         childUpdate["/$key"] = GameRoom
-        childMatch["/$match_key"] = Match
-
         db.GameRooms.updateChildren(childUpdate)
-        db.Matches.updateChildren(childMatch)
 
         val intent = Intent(this, Waiting::class.java)
-        intent.putExtra("GAME_ROOM_ID", key)
-        intent.putExtra("MATCH_ID", match_key)
+        GAME_ID = key
         startActivity(intent)
+
+        //TODO PASSWORD
     }
 }

@@ -25,11 +25,11 @@ class Bishop(color: String) : Pieces() {
             var fp = false
 
             while (bufX in 0..7 && bufY in 0..7) {
-                if (board[bufX][bufY].COLOR == MY_COLOR || fp) {
+                if (board[bufX][bufY].COLOR == MY_COLOR() || fp) {
                     break
                 }
 
-                if (board[bufX][bufY].COLOR == OP_COLOR) {
+                if (board[bufX][bufY].COLOR == OP_COLOR()) {
                     fp = !fp
                 }
                 moves.add(Pair(bufX, bufY))

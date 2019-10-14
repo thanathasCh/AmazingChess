@@ -16,7 +16,7 @@ open class Board : AppCompatActivity() {
     }
 
     fun move(pos: Pair<Int, Int>, des: Pair<Int, Int>) {
-        if (MainBoard[des.first][des.second].COLOR != OP_COLOR) {
+        if (MainBoard[des.first][des.second].COLOR != OP_COLOR()) {
             MainBoard[pos.first][pos.second] = MainBoard[des.first][des.second].also {
                 MainBoard[des.first][des.second] = MainBoard[pos.first][pos.second]
             }

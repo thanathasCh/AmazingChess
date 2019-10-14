@@ -59,8 +59,9 @@ class JoinRoomActivity : AppCompatActivity() {
                         R.layout.activity_vms_board -> Intent(this@JoinRoomActivity, VmsBoard::class.java)
                         else -> Intent(this@JoinRoomActivity, ClassicBoard::class.java)
                     }
-                    intent.putExtra("MATCH_ID", gameRoom.Id)
+                    GAME_ID = gameRoom.Id
                     global_player_status = 1
+                    my_turn = false
                     startActivity(intent)
                 } else {
                     warningBox(this@JoinRoomActivity, "Room Not Found",

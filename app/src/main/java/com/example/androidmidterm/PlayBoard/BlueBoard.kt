@@ -62,7 +62,7 @@ class BlueBoard: Board() {
             for (y in 0..7) {
                 if (Board[x][y].TYPE != "UNKNOWN") {
                     boardLocation[x][y].setImageResource(Board[x][y].toResource())
-                    boardLocation[x][y].isClickable = Board[x][y].COLOR == MY_COLOR
+                    boardLocation[x][y].isClickable = Board[x][y].COLOR == MY_COLOR()
                 } else {
                     boardLocation[x][y].setImageResource(0)
                     boardLocation[x][y].isClickable = false

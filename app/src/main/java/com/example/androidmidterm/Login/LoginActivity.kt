@@ -7,6 +7,7 @@ import com.example.androidmidterm.Menu.MenuActivity
 import com.example.androidmidterm.R
 import com.example.androidmidterm.Register.RegisterActivity
 import com.example.androidmidterm.Services.DbContext
+import com.example.androidmidterm.Services.USER_ID
 import com.example.androidmidterm.Services.encrypt
 import com.example.androidmidterm.Services.warningBox
 import com.google.firebase.database.DataSnapshot
@@ -37,6 +38,7 @@ class LoginActivity : AppCompatActivity() {
 
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot.exists() && dataSnapshot.children.iterator().next().child("Password").value.toString() == password) {
+                    USER_ID = dataSnapshot.children.iterator().next().key!!
                     startActivity(Intent(applicationContext, MenuActivity::class.java))
                 } else {
                     warningBox(this@LoginActivity, "Account not found!",

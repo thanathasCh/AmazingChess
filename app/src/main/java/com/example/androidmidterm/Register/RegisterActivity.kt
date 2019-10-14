@@ -75,6 +75,8 @@ class RegisterActivity : AppCompatActivity() {
                     childUpdate["/$key"] = User
 
                     db.Users.updateChildren(childUpdate)
+
+                    USER_ID = key
                     Toast.makeText(this@RegisterActivity, "Register Successfully", Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this@RegisterActivity, MenuActivity::class.java))
                 }

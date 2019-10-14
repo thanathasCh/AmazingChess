@@ -21,7 +21,7 @@ class Knight(color: String) : Pieces() {
             Pair(x + 1, y - 2), Pair(x + 1, y + 2), Pair(x + 2, y - 1), Pair(x + 2, y + 1))
 
         for (i in moves) {
-            if (!i.isExceedBoard() && board[i.first][i.second]!!.COLOR != MY_COLOR) {
+            if (!i.isExceedBoard() && board[i.first][i.second].COLOR != MY_COLOR()) {
                 can.add(i)
             }
         }

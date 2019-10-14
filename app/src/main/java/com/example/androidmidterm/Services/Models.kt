@@ -33,55 +33,24 @@ data class UserModel (
 data class GameRoomModel (
     var Id: String = "",
     var Name: String = "",
-    var StatusByte: Int = 0
+    var StatusByte: Int = 0,
+    var Password: String = "",
+    var Move1: Move =  Move(),
+    var Move2: Move = Move()
 ) {
     @Exclude
     fun toMap(): Map<String, Any?> {
         return mapOf(
             "Id" to Id,
             "Name" to Name,
-            "StatusByte" to StatusByte
-        )
-    }
-
-    fun toViewModel() = GameRoomViewModel (
-        Id = Id,
-        Name = Name,
-        Status = when (StatusByte) {
-            0 -> "Ended"
-            1 -> "Waiting"
-            2 -> "Playing"
-            else -> "Unknown"
-        }
-    )
-}
-
-data class Match (
-    var GameRoomId: String = "",
-    var Move: Move = Move()
-) {
-    @Exclude
-    fun toMap(): Map<String, Any?> {
-        return mapOf(
-            "GameRoomId" to GameRoomId,
-            "Move" to Move
+            "StatusByte" to StatusByte,
+            "Password" to Password,
+            "Move1" to Move1,
+            "Move2" to Move2
         )
     }
 }
 
 data class Move (
-    var oX: Int = 0,
-    var oY: Int = 0,
-    var dX: Int = 0,
-    var dY: Int = 0
-) {
-    @Exclude
-    fun toMap(): Map<String, Any?> {
-        return mapOf(
-            "oX" to oX,
-            "oY" to oY,
-            "dX" to dX,
-            "dY" to dY
-        )
-    }
-}
+    var Value: String = "0,0,0,0"
+)
