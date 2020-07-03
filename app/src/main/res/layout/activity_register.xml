@@ -111,7 +111,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="28dp"
                 android:background="@drawable/bg_edit_text"
-                android:drawableStart="@drawable/ic_action_unlockv2"
+                android:drawableStart="@drawable/ic_baseline_email_24"
                 android:drawablePadding="8dp"
                 android:ems="10"
                 android:fontFamily="@font/lin_libertine_ri"

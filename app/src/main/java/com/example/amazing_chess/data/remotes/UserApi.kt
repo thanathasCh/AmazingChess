@@ -28,8 +28,11 @@ class UserApi {
             }
     }
 
-    fun checkDuplicate(userName: String, callback: (Boolean) -> Unit) {
-        val requestJson = User(userName = userName).toJson()
+    fun checkDuplicate(userName: String, email: String, callback: (Boolean) -> Unit) {
+        val requestJson = User(
+            userName = userName,
+            email = email
+        ).toJson()
 
         Fuel.post(url_dict.checkDuplicate)
             .jsonBody(requestJson)

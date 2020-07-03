@@ -21,7 +21,7 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        loadingBar = ProgressDialogBuilder(this).loadingBar(R.string.loading)
+        loadingBar = ProgressDialogBuilder(this).loadingBar()
 
         cvLogin.setOnClickListener {
             val userName = tvUserName.text.toString()
@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
                         loadingBar.dismiss()
 
                         if (it) {
-                            alertBuilder.showWarning(
+                            alertBuilder.showInfo(
                                 R.string.login_title,
                                 R.string.login_successful
                             ) {
