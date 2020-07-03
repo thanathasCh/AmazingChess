@@ -1,4 +1,4 @@
-package com.example.amazing_chess.views.leader_board
+package com.example.amazing_chess.views.leaderBoard
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

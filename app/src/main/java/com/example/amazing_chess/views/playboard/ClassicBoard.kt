@@ -5,7 +5,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import com.example.amazing_chess.R
-import com.example.amazing_chess.models.chess_pieces.King
+import com.example.amazing_chess.models.chessPieces.King
 import com.example.amazing_chess.services.*
 import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DataSnapshot

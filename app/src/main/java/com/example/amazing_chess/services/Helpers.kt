@@ -9,10 +9,14 @@ import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AlertDialog
 import com.example.amazing_chess.R
-import com.example.amazing_chess.models.chess_pieces.*
+import com.example.amazing_chess.models.chessPieces.*
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+
+inline fun <reified T> Gson.fromJson(json: String) = this.fromJson<T>(json, object: TypeToken<T>() {}.type)
 
 fun isSubBoard(pos: Pair<Int, Int>) = ((pos.first % 2 == 0) == (pos.second % 2 == 0))
 

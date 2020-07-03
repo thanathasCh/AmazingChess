@@ -1,4 +1,4 @@
-package com.example.amazing_chess.views.splash_screen
+package com.example.amazing_chess.views.splashScreen
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

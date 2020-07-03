@@ -15,14 +15,14 @@
         <activity android:name=".views.playboard.VmsBoard" />
         <activity android:name=".views.menu.WaitingActivity" />
         <activity android:name=".views.register.RegisterActivity" />
-        <activity android:name=".views.leader_board.LeaderBoardActivity" />
+        <activity android:name=".views.leaderBoard.LeaderBoardActivity" />
         <activity android:name=".views.menu.JoinRoomActivity" />
         <activity android:name=".views.MainActivity" />
         <activity android:name=".views.login.LoginActivity" />
         <activity android:name=".views.menu.CreateRoomActivity" />
         <activity android:name=".views.menu.MenuActivity" />
         <activity android:name=".views.playboard.ClassicBoard" />
-        <activity android:name=".views.splash_screen.SplashScreenActivity">
+        <activity android:name=".views.splashScreen.SplashScreenActivity">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
 

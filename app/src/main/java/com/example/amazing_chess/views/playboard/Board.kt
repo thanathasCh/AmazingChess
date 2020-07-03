@@ -1,8 +1,8 @@
 package com.example.amazing_chess.views.playboard
 
 import androidx.appcompat.app.AppCompatActivity
-import com.example.amazing_chess.models.chess_pieces.Pieces
-import com.example.amazing_chess.models.chess_pieces.Unknown
+import com.example.amazing_chess.models.chessPieces.Pieces
+import com.example.amazing_chess.models.chessPieces.Unknown
 import com.example.amazing_chess.services.*
 
 open class Board : AppCompatActivity() {

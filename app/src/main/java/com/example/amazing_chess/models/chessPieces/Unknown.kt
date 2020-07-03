@@ -1,4 +1,4 @@
-package com.example.amazing_chess.models.chess_pieces
+package com.example.amazing_chess.models.chessPieces
 
 class Unknown : Pieces() {
     init {

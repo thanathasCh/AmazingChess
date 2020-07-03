@@ -5,7 +5,7 @@ import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.amazing_chess.R
-import com.example.amazing_chess.views.leader_board.LeaderBoardActivity
+import com.example.amazing_chess.views.leaderBoard.LeaderBoardActivity
 import kotlinx.android.synthetic.main.activity_menu.*
 
 class MenuActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.example.amazing_chess.views.leader_board
+package com.example.amazing_chess.views.leaderBoard
 
 import android.app.Activity
 import android.view.View

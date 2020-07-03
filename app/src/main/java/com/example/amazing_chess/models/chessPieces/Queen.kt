@@ -1,4 +1,4 @@
-package com.example.amazing_chess.models.chess_pieces
+package com.example.amazing_chess.models.chessPieces
 
 import com.example.amazing_chess.services.MY_COLOR
 import com.example.amazing_chess.services.OP_COLOR
