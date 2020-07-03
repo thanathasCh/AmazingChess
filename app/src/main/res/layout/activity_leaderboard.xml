@@ -11,9 +11,9 @@
         android:id="@+id/llRanking"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginTop="28dp"
         android:layout_marginBottom="4dp"
+        android:orientation="vertical"
         android:paddingBottom="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,17 +29,25 @@
             android:gravity="center"
             android:text="@string/rank_title"
             android:textColor="@color/text_color"
-            android:textSize="48dp" />
+            android:textSize="48sp" />
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvRanking"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/srl_leader_board"
         android:layout_width="match_parent"
-        android:layout_height="592dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/llRanking" />
+        app:layout_constraintTop_toBottomOf="@+id/llRanking">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLeaderBoard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llRanking" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

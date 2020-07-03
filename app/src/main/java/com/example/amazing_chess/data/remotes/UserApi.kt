@@ -8,7 +8,7 @@ import com.github.kittinunf.fuel.core.extensions.jsonBody
 import com.google.gson.Gson
 
 class UserApi {
-    private val url_dict = UrlDict()
+    private val urlDict = UrlDict()
     private val mGson = Gson()
 
     fun login(userName: String, password: String, callback: (Boolean) -> Unit) {
@@ -17,7 +17,7 @@ class UserApi {
             password = password
         ).toJson()
 
-        Fuel.post(url_dict.login)
+        Fuel.post(urlDict.login)
             .jsonBody(requestJson)
             .responseString { request, response, result ->
                 if (response.statusCode == 200) {
@@ -34,7 +34,7 @@ class UserApi {
             email = email
         ).toJson()
 
-        Fuel.post(url_dict.checkDuplicate)
+        Fuel.post(urlDict.checkDuplicate)
             .jsonBody(requestJson)
             .responseString { request, response, result ->
                 if (response.statusCode == 200) {
@@ -46,7 +46,7 @@ class UserApi {
     }
 
     fun createAccount(user: User, callback: (Boolean) -> Unit) {
-        Fuel.post(url_dict.createAccount)
+        Fuel.post(urlDict.createAccount)
             .jsonBody(user.toJson())
             .responseString { request, response, result ->
                 if (response.statusCode == 200) {
