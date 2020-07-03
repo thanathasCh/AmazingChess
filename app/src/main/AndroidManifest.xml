@@ -17,7 +17,6 @@
         <activity android:name=".views.register.RegisterActivity" />
         <activity android:name=".views.leaderBoard.LeaderBoardActivity" />
         <activity android:name=".views.menu.JoinRoomActivity" />
-        <activity android:name=".views.MainActivity" />
         <activity android:name=".views.login.LoginActivity" />
         <activity android:name=".views.menu.CreateRoomActivity" />
         <activity android:name=".views.menu.MenuActivity" />

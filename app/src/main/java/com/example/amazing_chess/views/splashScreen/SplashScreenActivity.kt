@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import com.example.amazing_chess.R
+import com.example.amazing_chess.data.locals.UserSharedPreference
 import com.example.amazing_chess.views.login.LoginActivity
+import com.example.amazing_chess.views.menu.MenuActivity
 
 class SplashScreenActivity : AppCompatActivity() {
 
@@ -17,8 +19,11 @@ class SplashScreenActivity : AppCompatActivity() {
 
         Handler().postDelayed({
             run {
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
+                if (UserSharedPreference(this).isLogin()) {
+                    startActivity(Intent(this, MenuActivity::class.java))
+                } else {
+                    startActivity(Intent(this, LoginActivity::class.java))
+                }
                 finish()
             }
         }, time)
