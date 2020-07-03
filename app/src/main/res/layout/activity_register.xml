@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/register_background"
+    tools:context=".views.register.RegisterActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvRegisterTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/pineappl_demo_3o_gz"
+            android:gravity="center"
+            android:text="@string/register_title"
+            android:textColor="@color/text_color"
+            android:textSize="36sp"
+            app:autoSizeMaxTextSize="40dp"
+            app:autoSizeMinTextSize="12dp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginRight="28dp"
+            android:background="@drawable/bg_edit_text"
+            android:drawableStart="@drawable/ic_action_name"
+            android:drawablePadding="8dp"
+            android:ems="10"
+            android:fontFamily="@font/lin_libertine_ri"
+            android:hint="@string/first_name"
+            android:inputType="textPersonName"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:textColor="@color/text_color"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvRegisterTitle" />
+
+        <EditText
+            android:id="@+id/etLastName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="28dp"
+            android:background="@drawable/bg_edit_text"
+            android:drawableStart="@drawable/ic_action_name"
+            android:drawablePadding="8dp"
+            android:ems="10"
+            android:fontFamily="@font/lin_libertine_ri"
+            android:hint="@string/last_name"
+            android:inputType="textPersonName"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:textColor="@color/text_color"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etName" />
+
+        <EditText
+            android:id="@+id/etUsername"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="28dp"
+            android:background="@drawable/bg_edit_text"
+            android:drawableStart="@drawable/ic_action_userv2"
+            android:drawablePadding="8dp"
+            android:ems="10"
+            android:fontFamily="@font/lin_libertine_ri"
+            android:hint="@string/username_title"
+            android:inputType="textPersonName"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:textColor="@color/text_color"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etLastName" />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="28dp"
+                android:background="@drawable/bg_edit_text"
+                android:drawableStart="@drawable/ic_action_unlockv2"
+                android:drawablePadding="8dp"
+                android:ems="10"
+                android:fontFamily="@font/lin_libertine_ri"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:textColor="@color/text_color"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etUsername" />
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="28dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="28dp"
+                android:background="@drawable/bg_edit_text"
+                android:drawableStart="@drawable/ic_action_unlockv2"
+                android:drawablePadding="8dp"
+                android:ems="10"
+                android:fontFamily="@font/lin_libertine_ri"
+                android:hint="@string/password_title"
+                android:inputType="textPassword"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:textColor="@color/text_color"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+            <EditText
+            android:id="@+id/etConfirmPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="28dp"
+            android:background="@drawable/bg_edit_text"
+            android:drawableStart="@drawable/ic_action_lockv2"
+            android:drawablePadding="8dp"
+            android:ems="10"
+            android:fontFamily="@font/lin_libertine_ri"
+            android:hint="@string/confirm_password_title"
+            android:inputType="textPassword"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:textColor="@color/text_color"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/button_background"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etConfirmPassword"
+            android:focusable="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="28dp"
+                android:layout_marginRight="28dp"
+                android:gravity="center"
+                android:paddingLeft="16dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="16dp"
+                android:paddingRight="16dp">
+
+                <TextView
+                    android:id="@+id/tvRegisterButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/lin_libertine_ri"
+                    android:gravity="center"
+                    android:text="@string/sign_up_button"
+                    android:textColor="@color/text_color"
+                    android:textSize="24sp" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

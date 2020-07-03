@@ -1,0 +1,56 @@
+<resources>
+
+    <string name="app_name">Amazing Chess</string>
+
+    <!-- Titles -->
+    <string name="login_title">LOG IN</string>
+    <string name="register_title">CREATE ACCOUNT</string>
+    <string name="menu_title">MENU</string>
+    <string name="create_room_title">CREATE ROOM</string>
+    <string name="join_room_title">JOIN ROOM</string>
+    <string name="rank_title">RANKING</string>
+
+    <string name="invalid_title">Invalid Register!</string>
+    <string name="account_not_found_title">Account not found!</string>
+
+    <string name="name_title">Name</string>
+    <string name="username_title">Username</string>
+    <string name="password_title">Password</string>
+    <string name="confirm_password_title">Confirm Password</string>
+    <string name="score_title">Score</string>
+
+    <string name="win">WIN</string>
+    <string name="lose">LOSE</string>
+
+    <!-- Sub-Title -->
+    <string name="alert_message_sub_title">Username or Password is wrong, Try again :)</string>
+    <string name="alert_messageV2_sub_title">Invalid Username or Password</string>
+    <string name="splash_screen_sub_title">AMAZING CHESS</string>
+    <string name="credit">© Oat and James 2019</string>
+
+    <!-- Messages -->
+    <string name="loading">Loading</string>
+    <string name="wrong_username_password">Incorrect username or password.</string>
+    <string name="password_confirmation_error">Password and Confirm password are not the same</string>
+    <string name="duplicate_account">Duplicate username or email, please use new username or email</string>
+    <string name="create_account_successful">Create Account Successfully</string>
+    <string name="error_occurred">Error Occurred</string>
+
+    <!-- Error -->
+    <string name="empty_error">Fields cannot be empty</string>
+    <string name="invalid_email">Invalid Email</string>
+
+    <!-- Button -->
+    <string name="sign_in_button">Sign In</string>
+    <string name="sign_up_button">Sign Up</string>
+    <string name="create_button">Create</string>
+    <string name="join_button">Join</string>
+    <string name="ranking_button">Ranking</string>
+    <string name="ok_button">OK</string>
+    <string name="play_button">Play</string>
+    <string name="give_up">Give Up</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="email">Email</string>>
+
+</resources>
