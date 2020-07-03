@@ -28,9 +28,11 @@ class UserApi {
             }
     }
 
-    fun checkDuplicate(user: User, callback: (Boolean) -> Unit) {
+    fun checkDuplicate(userName: String, callback: (Boolean) -> Unit) {
+        val requestJson = User(userName = userName).toJson()
+
         Fuel.post(url_dict.checkDuplicate)
-            .jsonBody(user.toJson())
+            .jsonBody(requestJson)
             .responseString { request, response, result ->
                 if (response.statusCode == 200) {
                     callback(mGson.fromJson<Boolean>(result.component1() ?: "false"))

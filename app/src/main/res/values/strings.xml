@@ -29,12 +29,13 @@
     <string name="credit">© Oat and James 2019</string>
 
     <!-- Messages -->
-    <string name="loading">Loading</string>
+    <string name="loading">Loading…</string>
     <string name="wrong_username_password">Incorrect username or password.</string>
     <string name="password_confirmation_error">Password and Confirm password are not the same</string>
     <string name="duplicate_account">Duplicate username or email, please use new username or email</string>
     <string name="create_account_successful">Create Account Successfully</string>
     <string name="error_occurred">Error Occurred</string>
+    <string name="login_successful">Login Successful</string>
 
     <!-- Error -->
     <string name="empty_error">Fields cannot be empty</string>
@@ -52,7 +53,7 @@
     <string name="last_name">Last Name</string>
     <string name="first_name">First Name</string>
     <string name="email">Email</string>
-    <string name="title_activity_main2">MainActivity2</string>
+
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>

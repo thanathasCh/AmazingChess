@@ -23,7 +23,7 @@ class UserRepository(private val context: Context) {
 
     fun logout() = userSharedPreference.logout()
 
-    fun checkDuplicate(user: User, callback: (Boolean) -> Unit) = userApi.checkDuplicate(user, callback)
+    fun checkDuplicate(userName: String, callback: (Boolean) -> Unit) = userApi.checkDuplicate(userName, callback)
 
-    fun createAccount(user: User, callback: (Boolean) -> Unit) = userApi.checkDuplicate(user, callback)
+    fun createAccount(user: User, callback: (Boolean) -> Unit) = userApi.createAccount(user, callback)
 }

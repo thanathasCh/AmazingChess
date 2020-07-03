@@ -20,7 +20,7 @@ data class User (
             put("userName", userName)
             put("firstName", firstName)
             put("lastName", lastName)
-            put("pasword", password)
+            put("password", password)
             put("email", email)
             put("createdAt", createdAt)
         }
