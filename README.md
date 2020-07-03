@@ -30,36 +30,36 @@ The new screenshots will be taken once I finish integration to .NET Core API.
 
 * Splash Screen while entering the application
 
-![](https://github.com/thanathasCh/AmazingChess/blob/develop/screenshots/SplashScreen.jpg?raw=true)
+![](https://github.com/thanathasCh/AmazingChess/blob/master/screenshots/SplashScreen.jpg?raw=true)
 
 * Login Page
 
-![](https://github.com/thanathasCh/AmazingChess/blob/develop/screenshots/Login.jpg?raw=true?raw=true)
+![](https://github.com/thanathasCh/AmazingChess/blob/master/screenshots/Login.jpg?raw=true?raw=true)
 
 * Sign up page
 
-![](https://github.com/thanathasCh/AmazingChess/blob/develop/screenshots/SignupScreen.jpg?raw=true)
+![](https://github.com/thanathasCh/AmazingChess/blob/master/screenshots/SignupScreen.jpg?raw=true)
 
 * First page
 
-![](https://github.com/thanathasCh/AmazingChess/blob/develop/screenshots/FirstScreen.jpg?raw=true)
+![](https://github.com/thanathasCh/AmazingChess/blob/master/screenshots/FirstScreen.jpg?raw=true)
 
 * Scoreboard
 
-![](https://github.com/thanathasCh/AmazingChess/blob/develop/screenshots/Ranking.jpg?raw=true)
+![](https://github.com/thanathasCh/AmazingChess/blob/master/screenshots/Ranking.jpg?raw=true)
 
 * Creating and waiting room
 
-![](https://github.com/thanathasCh/AmazingChess/blob/develop/screenshots/CreateRoom.jpg?raw=true)
+![](https://github.com/thanathasCh/AmazingChess/blob/master/screenshots/CreateRoom.jpg?raw=true)
 
-![](https://github.com/thanathasCh/AmazingChess/blob/develop/screenshots/WaitingScreen.jpg?raw=true)
+![](https://github.com/thanathasCh/AmazingChess/blob/master/screenshots/WaitingScreen.jpg?raw=true)
 
 * Joining room
 
-![](https://github.com/thanathasCh/AmazingChess/blob/develop/screenshots/JoinGame.jpg?raw=true)
+![](https://github.com/thanathasCh/AmazingChess/blob/master/screenshots/JoinGame.jpg?raw=true)
 
 * Playing page
 
-![](https://github.com/thanathasCh/AmazingChess/blob/develop/screenshots/Playing1.jpg?raw=true)
-![](https://github.com/thanathasCh/AmazingChess/blob/develop/screenshots/Playing2.jpg?raw=true)
-![](https://github.com/thanathasCh/AmazingChess/blob/develop/screenshots/Playing3.jpg?raw=true)
+![](https://github.com/thanathasCh/AmazingChess/blob/master/screenshots/Playing1.jpg?raw=true)
+![](https://github.com/thanathasCh/AmazingChess/blob/master/screenshots/Playing2.jpg?raw=true)
+![](https://github.com/thanathasCh/AmazingChess/blob/master/screenshots/Playing3.jpg?raw=true)
