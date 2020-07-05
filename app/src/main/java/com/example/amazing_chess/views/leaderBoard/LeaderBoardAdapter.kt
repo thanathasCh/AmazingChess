@@ -8,12 +8,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.amazing_chess.R
 import com.example.amazing_chess.models.dataModels.LeaderBoard
 import com.example.amazing_chess.services.inflate
-import kotlinx.android.synthetic.main.ranking_item.view.*
+import kotlinx.android.synthetic.main.leaderboard_item.view.*
 
 class LeaderBoardAdapter(private val activity: Activity, private val users: java.util.ArrayList<LeaderBoard>):
         RecyclerView.Adapter<LeaderBoardAdapter.RankingHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RankingHolder {
-        val inflatedView = parent.inflate(R.layout.ranking_item, false)
+        val inflatedView = parent.inflate(R.layout.leaderboard_item, false)
         return RankingHolder(inflatedView)
     }
 
@@ -29,6 +29,7 @@ class LeaderBoardAdapter(private val activity: Activity, private val users: java
         fun bindUser(user: LeaderBoard, position: Int) {
             with (view) {
                 tvName.text = user.fullName
+                tvUserName.text = user.userName
                 tvScore.text = user.score.toString()
                 tvRank.text = position.toString()
 

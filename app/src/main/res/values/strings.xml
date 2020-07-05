@@ -36,6 +36,7 @@
     <string name="create_account_successful">Create Account Successfully</string>
     <string name="error_occurred">Error Occurred</string>
     <string name="login_successful">Login Successful</string>
+    <string name="confirm_logout">Do you want to logout?</string>
 
     <!-- Error -->
     <string name="empty_error">Fields cannot be empty</string>
@@ -46,13 +47,16 @@
     <string name="sign_up_button">Sign Up</string>
     <string name="create_button">Create</string>
     <string name="join_button">Join</string>
-    <string name="ranking_button">Ranking</string>
+    <string name="leaderboard_button">Leaderboard</string>
     <string name="ok_button">OK</string>
     <string name="play_button">Play</string>
     <string name="give_up">Give Up</string>
     <string name="last_name">Last Name</string>
     <string name="first_name">First Name</string>
     <string name="email">Email</string>
+    <string name="logout_button">Log Out</string>
+    <string name="yes_button">Yes</string>
+    <string name="no_button">No</string>
 
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -61,6 +65,7 @@
     <string name="previous">Previous</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="_1">1</string>>
 
 </resources>

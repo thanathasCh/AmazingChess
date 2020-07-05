@@ -42,6 +42,7 @@ class LoginActivity : AppCompatActivity() {
                                 R.string.login_successful
                             ) {
                                 startActivity(Intent(this, MenuActivity::class.java))
+                                finish()
                             }
                         } else {
                             alertBuilder.showWarning(

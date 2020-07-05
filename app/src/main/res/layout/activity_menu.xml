@@ -30,7 +30,8 @@
         app:cardElevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        android:focusable="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -39,10 +40,9 @@
             android:layout_marginLeft="28dp"
             android:layout_marginRight="28dp"
             android:gravity="center"
-            android:paddingLeft="24dp"
+            android:paddingStart="24dp"
             android:paddingTop="16dp"
-            android:paddingEnd="24dp"
-            android:paddingRight="16dp">
+            android:paddingEnd="24dp">
 
             <TextView
                 android:id="@+id/tvCreateRoom"
@@ -53,7 +53,7 @@
                 android:gravity="center"
                 android:text="@string/create_button"
                 android:textColor="@color/text_color"
-                android:textSize="28dp" />
+                android:textSize="28sp" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
@@ -70,7 +70,8 @@
         app:cardElevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cvCreate">
+        app:layout_constraintTop_toBottomOf="@+id/cvCreate"
+        android:focusable="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -93,13 +94,13 @@
                 android:text="@string/join_button"
                 android:fontFamily="@font/lin_libertine_ri"
                 android:textColor="@color/text_color"
-                android:textSize="28dp" />
+                android:textSize="28sp" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvRank"
+        android:id="@+id/cvLeaderBoard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -110,7 +111,8 @@
         app:cardElevation="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cvJoin">
+        app:layout_constraintTop_toBottomOf="@+id/cvJoin"
+        android:focusable="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -125,15 +127,56 @@
             android:paddingRight="16dp">
 
             <TextView
-                android:id="@+id/tvRanking"
+                android:id="@+id/tvLeaderBoard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:gravity="center"
                 android:fontFamily="@font/lin_libertine_ri"
-                android:text="@string/ranking_button"
+                android:text="@string/leaderboard_button"
                 android:textColor="@color/text_color"
-                android:textSize="28dp" />
+                android:textSize="28sp" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/sub_background"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvLeaderBoard"
+        android:focusable="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp"
+            android:gravity="center"
+            android:paddingLeft="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingRight="16dp">
+
+            <TextView
+                android:id="@+id/tvLogout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:fontFamily="@font/lin_libertine_ri"
+                android:text="@string/logout_button"
+                android:textColor="@color/text_color"
+                android:textSize="28sp" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

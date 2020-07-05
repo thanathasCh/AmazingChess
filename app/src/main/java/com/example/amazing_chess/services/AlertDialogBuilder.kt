@@ -8,50 +8,34 @@ import com.example.amazing_chess.R
 class AlertDialogBuilder(private val context: Context) {
     private val mHandler = Handler()
 
-    fun showInfo(title: Int, message: Int) {
+    fun showInfo(title: Int, message: Int, action: () -> Unit = {}) {
         mHandler.post {
             AlertDialog.Builder(context)
                 .setTitle(title)
                 .setMessage(message)
-                .setPositiveButton(R.string.ok_button) { _, _ -> }
+                .setPositiveButton(R.string.ok_button) { _, _ -> action() }
                 .setCancelable(false)
                 .show()
         }
     }
 
-    fun showWarning(title: Int, message: Int) {
+    fun showWarning(title: Int, message: Int, action: () -> Unit = {}) {
         mHandler.post {
             AlertDialog.Builder(context)
                 .setTitle(title)
                 .setMessage(message)
-                .setPositiveButton(R.string.ok_button) { _, _ -> }
-                .setCancelable(false)
+                .setPositiveButton(R.string.ok_button) { _, _ -> action() }
                 .show()
         }
     }
 
-    fun showInfo(title: Int, message: Int, action: () -> Unit) {
+    fun showWarningWithOptions(title: Int, message: Int, positiveAction: () -> Unit = {}, negativeAction: () -> Unit = {}) {
         mHandler.post {
             AlertDialog.Builder(context)
                 .setTitle(title)
                 .setMessage(message)
-                .setPositiveButton(R.string.ok_button) { _, _ ->
-                    action()
-                }
-                .setCancelable(false)
-                .show()
-        }
-    }
-
-    fun showWarning(title: Int, message: Int, action: () -> Unit) {
-        mHandler.post {
-            AlertDialog.Builder(context)
-                .setTitle(title)
-                .setMessage(message)
-                .setPositiveButton(R.string.ok_button) { _, _ ->
-                    action()
-                }
-                .setOnCancelListener { action() }
+                .setPositiveButton(R.string.yes_button) { _, _ -> positiveAction() }
+                .setNegativeButton(R.string.no_button) {_, _ -> negativeAction() }
                 .show()
         }
     }

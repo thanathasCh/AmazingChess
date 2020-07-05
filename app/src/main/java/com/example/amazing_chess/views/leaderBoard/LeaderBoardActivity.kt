@@ -11,7 +11,7 @@ import com.example.amazing_chess.services.*
 import kotlinx.android.synthetic.main.activity_leaderboard.*
 
 class LeaderBoardActivity : AppCompatActivity() {
-    private val leaderBoardrepository = LeaderBoardRepository(this)
+    private val leaderBoardRepository = LeaderBoardRepository(this)
     private lateinit var loadingBar: ProgressDialog
 
     private val users = arrayListOf<LeaderBoard>()
@@ -33,11 +33,15 @@ class LeaderBoardActivity : AppCompatActivity() {
     }
 
     private fun updateLeaderBoard() {
-        leaderBoardrepository.fetchLeaderBoard {
-            users.clear()
-            users.addAll(it)
-            leaderBoardAdapter.notifyDataSetChanged()
-            loadingBar.dismiss()
-        }
+        Thread(Runnable {
+            leaderBoardRepository.fetchLeaderBoard {
+                if (it.isNotEmpty()) {
+                    users.clear()
+                    users.addAll(it)
+                    leaderBoardAdapter.notifyDataSetChanged()
+                }
+                loadingBar.dismiss()
+            }
+        }).start()
     }
 }
